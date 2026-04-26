@@ -1,99 +1,932 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Primary -->
-    <title>Trator na Prática | Prof. Dr. Leonardo Monteiro – Segurança em Máquinas Agrícolas</title>
-    <meta name="description" content="Site oficial do Prof. Dr. Leonardo Monteiro — LIMA/UFC. 1.682 acidentes documentados. Especialista em segurança em máquinas agrícolas, NR-31, NR-12. Canal YouTube com 38K inscritos.">
-    <meta name="keywords" content="trator na prática, segurança máquinas agrícolas, NR-31, NR-12, acidente trator, LIMA UFC, Leonardo Monteiro, prevenção acidentes agrícolas, ROPS, TDP">
-    <meta name="author" content="Prof. Dr. Leonardo Monteiro">
-    <meta name="robots" content="index, follow">
+  <!-- SEO Primary -->
+  <title>Trator na Prática | Prof. Dr. Leonardo Monteiro – Mecanização Agrícola com Segurança</title>
+  <meta name="description" content="Trator na Prática — Prof. Leonardo Monteiro. Mecanização agrícola com segurança e eficiência. Cursos, treinamentos e conteúdo prático sobre NR-31, operação segura, manutenção e prevenção de acidentes." />
+  <meta name="keywords" content="trator na prática, mecanização agrícola, NR-31, NR-12, segurança máquinas agrícolas, Leonardo Monteiro, prevenção de acidentes, operação segura, manutenção preventiva" />
+  <meta name="author" content="Prof. Dr. Leonardo Monteiro" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0E1410" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://tratornapratica.com.br/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tratornapratica.com.br/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tratornapratica.com.br/">
-    <meta property="og:title" content="Trator na Prática | Prof. Dr. Leonardo Monteiro – Segurança em Máquinas Agrícolas">
-    <meta property="og:description" content="1.682 acidentes documentados. 89% com desfecho fatal. Ciência que salva vidas no campo. Canal YouTube com 38K inscritos.">
-    <meta property="og:image" content="https://tratornapratica.com.br/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Trator na Prática">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tratornapratica.com.br/" />
+  <meta property="og:title" content="Trator na Prática | Prof. Dr. Leonardo Monteiro" />
+  <meta property="og:description" content="Mecanização agrícola com segurança e eficiência. Aprenda com quem vive a prática no campo." />
+  <meta property="og:image" content="https://tratornapratica.com.br/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Trator na Prática" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Trator na Prática | Prof. Dr. Leonardo Monteiro">
-    <meta name="twitter:description" content="1.682 acidentes documentados. 89% com desfecho fatal. Ciência que salva vidas no campo.">
-    <meta name="twitter:image" content="https://tratornapratica.com.br/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trator na Prática | Prof. Dr. Leonardo Monteiro" />
+  <meta name="twitter:description" content="Mecanização agrícola com segurança e eficiência. Aprenda com quem vive a prática no campo." />
+  <meta name="twitter:image" content="https://tratornapratica.com.br/og-image.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-21Q3M1P2G9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-21Q3M1P2G9');
-    </script>
+  <!-- Preload da imagem do professor para o hero (LCP) -->
+  <link rel="preload" as="image" href="/professor.jpg" />
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Leonardo Monteiro",
-      "honorificPrefix": "Prof. Dr.",
-      "jobTitle": "Professor Associado de Engenharia Agrícola",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Universidade Federal do Ceará",
-        "alternateName": "UFC",
-        "url": "https://www.ufc.br"
-      },
-      "url": "https://tratornapratica.com.br",
-      "sameAs": [
-        "https://www.youtube.com/@tratornapratica",
-        "https://www.instagram.com/profleonardomonteiro/",
-        "https://www.instagram.com/acidentestrator/",
-        "https://www.facebook.com/profleonardomonteiro/",
-        "http://lattes.cnpq.br/1662973235328717"
-      ],
-      "knowsAbout": ["Segurança em Máquinas Agrícolas", "NR-31", "NR-12", "Prevenção de Acidentes Agrícolas", "ROPS", "TDP"],
-      "description": "Coordenador do LIMA/UFC há 20 anos. Responsável pelo maior banco de dados de acidentes com máquinas agrícolas do Brasil — 1.682 registros documentados.",
-      "image": "https://tratornapratica.com.br/professor.jpg"
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-21Q3M1P2G9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-21Q3M1P2G9');
+  </script>
+
+  <!-- Schema.org JSON-LD: Pessoa -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Leonardo Monteiro",
+    "honorificPrefix": "Prof. Dr.",
+    "jobTitle": "Especialista em Mecanização Agrícola",
+    "url": "https://tratornapratica.com.br",
+    "sameAs": [
+      "https://www.youtube.com/@tratornapratica",
+      "https://www.instagram.com/profleonardomonteiro/"
+    ],
+    "knowsAbout": ["Mecanização Agrícola", "NR-31", "Operação Segura", "Manutenção Preventiva", "Prevenção de Acidentes"],
+    "image": "https://tratornapratica.com.br/professor.jpg"
+  }
+  </script>
+
+  <!-- ============================== CSS ============================== -->
+  <style>
+    /* ========== RESET & BASE ========== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+      background:#0E1410;
+      color:#E8ECE7;
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
-    </script>
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none;transition:color .25s ease}
+    button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+    ul{list-style:none}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "LIMA/UFC — Laboratório de Investigação de Máquinas Agrícolas",
-      "url": "https://tratornapratica.com.br",
-      "logo": "https://tratornapratica.com.br/og-image.png",
-      "founder": {
-        "@type": "Person",
-        "name": "Prof. Dr. Leonardo Monteiro"
-      },
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Universidade Federal do Ceará",
-        "url": "https://www.ufc.br"
-      },
-      "description": "Laboratório de Investigação de Máquinas Agrícolas da UFC. Banco de dados com 1.682 registros de acidentes com máquinas agrícolas."
+    /* ========== TOKENS ========== */
+    :root{
+      --bg-0:#0A0F0C;
+      --bg-1:#0E1410;
+      --bg-2:#141B16;
+      --bg-3:#1B2520;
+      --gold:#F2C94C;
+      --gold-2:#E0B43A;
+      --gold-soft:rgba(242,201,76,.12);
+      --green:#2E7D32;
+      --green-2:#43A047;
+      --green-soft:rgba(46,125,50,.18);
+      --text:#E8ECE7;
+      --text-dim:#A8B0AB;
+      --border:rgba(255,255,255,.08);
+      --shadow-lg:0 20px 60px rgba(0,0,0,.55);
+      --radius:14px;
+      --container:1200px;
     }
-    </script>
-    <script type="module" crossorigin="" src="/assets/index-4s3X5fwu.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-DAz7YDAt.css">
-  <script defer="" src="./runable.js" data-hostname="5hdip50ib9f8janx7qbi664lcicjmt3o.runable.site" data-url="https://r.lilstts.com/events"></script></head>
-  <body>
-    <div id="root"></div>
-  
 
-</body></html>
+    /* ========== UTIL ========== */
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+    .section{padding:96px 0;position:relative}
+    .eyebrow{
+      display:inline-block;font-size:.78rem;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px
+    }
+    .section-title{
+      font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;line-height:1.15;
+      color:#fff;margin-bottom:18px;letter-spacing:-.01em
+    }
+    .section-subtitle{color:var(--text-dim);font-size:1.05rem;max-width:680px}
+
+    /* ========== BUTTONS ========== */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 26px;border-radius:999px;font-weight:700;font-size:.97rem;
+      letter-spacing:.01em;transition:transform .2s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+      border:1px solid transparent;white-space:nowrap;
+    }
+    .btn-primary{background:var(--gold);color:#1A1A1A;box-shadow:0 10px 28px rgba(242,201,76,.25)}
+    .btn-primary:hover{background:#FFD75A;transform:translateY(-2px);box-shadow:0 14px 34px rgba(242,201,76,.35)}
+    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.22)}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .btn-wa{background:#25D366;color:#0A1F12}
+    .btn-wa:hover{background:#1EBE5C;transform:translateY(-2px)}
+    .btn-block{width:100%}
+
+    /* ========== HEADER ========== */
+    .header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(10,15,12,.78);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      transition:background .3s ease;
+    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff}
+    .logo img{height:34px;width:auto;flex-shrink:0}
+    .logo .logo-text{font-size:1.02rem;letter-spacing:.02em;white-space:nowrap}
+    .logo .logo-text span{color:var(--gold)}
+    .nav{display:flex;align-items:center;gap:28px}
+    .nav a{color:var(--text-dim);font-size:.95rem;font-weight:500;position:relative}
+    .nav a:hover{color:var(--gold)}
+    .nav a::after{
+      content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;
+      background:var(--gold);transition:width .25s ease
+    }
+    .nav a:hover::after{width:100%}
+    .header-cta{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .menu-toggle{display:none;width:42px;height:42px;border-radius:10px;
+      align-items:center;justify-content:center;border:1px solid var(--border)}
+    .menu-toggle span{display:block;width:20px;height:2px;background:#fff;position:relative}
+    .menu-toggle span::before,.menu-toggle span::after{
+      content:'';position:absolute;left:0;width:20px;height:2px;background:#fff;
+      transition:transform .25s ease, top .25s ease
+    }
+    .menu-toggle span::before{top:-6px}
+    .menu-toggle span::after{top:6px}
+
+    /* ========== HERO ========== */
+    .hero{
+      position:relative;min-height:100vh;padding:140px 0 80px;
+      background:
+        radial-gradient(ellipse 80% 60% at 80% 30%, rgba(242,201,76,.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(46,125,50,.18), transparent 60%),
+        linear-gradient(180deg, #0A0F0C 0%, #0E1410 60%, #0A0F0C 100%);
+      overflow:hidden;
+    }
+    /* Espaço preparado para a imagem do trator Valtra. Quando a imagem
+       /assets/images/valtra-hero.jpg existir, ela substituirá o gradiente. */
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background-image:url('/assets/images/valtra-hero.jpg');
+      background-size:cover;background-position:center right;
+      opacity:.18;mix-blend-mode:luminosity;
+      pointer-events:none;
+    }
+    .hero-grid{
+      position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;
+      gap:60px;align-items:center
+    }
+    .hero-photo{position:relative}
+    .hero-photo .frame{
+      position:relative;border-radius:24px;overflow:hidden;
+      background:linear-gradient(160deg,#1B2520,#0E1410);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-lg);
+      aspect-ratio:4/5;max-width:520px;margin-left:auto
+    }
+    .hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .hero-photo .badge{
+      position:absolute;left:-16px;bottom:24px;
+      background:var(--gold);color:#1A1A1A;font-weight:800;
+      padding:14px 22px;border-radius:14px;
+      box-shadow:0 14px 30px rgba(242,201,76,.3);
+      font-size:.92rem;letter-spacing:.02em
+    }
+    .hero-photo .badge strong{display:block;font-size:1.4rem;line-height:1}
+    .hero-content .eyebrow{margin-bottom:22px}
+    .hero-title{
+      font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:900;
+      line-height:1.05;letter-spacing:-.015em;color:#fff;margin-bottom:18px
+    }
+    .hero-title .gold{color:var(--gold)}
+    .hero-title .green{color:var(--green-2)}
+    .hero-sub{
+      font-size:1.1rem;color:var(--text-dim);max-width:560px;margin-bottom:34px
+    }
+    .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+    .hero-trust{
+      display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;
+      color:var(--text-dim);font-size:.9rem
+    }
+    .hero-trust strong{display:block;color:#fff;font-size:1.4rem;font-weight:800}
+    .hero-trust span{color:var(--gold)}
+  </style>
+
+  <style>
+    /* ========== AUTHORITY STRIP ========== */
+    .authority{
+      background:linear-gradient(90deg, rgba(242,201,76,.06), rgba(46,125,50,.06));
+      border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+      padding:36px 0
+    }
+    .authority-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center
+    }
+    .authority-item .num{
+      font-size:1.6rem;font-weight:800;color:var(--gold);display:block;line-height:1
+    }
+    .authority-item .lbl{
+      color:var(--text-dim);font-size:.92rem;margin-top:8px;display:block
+    }
+
+    /* ========== CURSOS ========== */
+    #cursos{background:var(--bg-1)}
+    .cursos-head{display:flex;justify-content:space-between;align-items:flex-end;
+      gap:24px;margin-bottom:48px;flex-wrap:wrap}
+    .cursos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .curso-card{
+      background:linear-gradient(180deg,var(--bg-2),var(--bg-1));
+      border:1px solid var(--border);border-radius:var(--radius);
+      padding:30px 26px;transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      position:relative;overflow:hidden
+    }
+    .curso-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,var(--gold),var(--green-2));
+      transform:scaleX(0);transform-origin:left;transition:transform .35s ease
+    }
+    .curso-card:hover{transform:translateY(-6px);border-color:rgba(242,201,76,.3);
+      box-shadow:0 18px 40px rgba(0,0,0,.4)}
+    .curso-card:hover::before{transform:scaleX(1)}
+    .curso-icon{
+      width:54px;height:54px;border-radius:12px;display:flex;align-items:center;
+      justify-content:center;background:var(--gold-soft);color:var(--gold);
+      margin-bottom:20px;font-size:1.5rem;font-weight:800
+    }
+    .curso-card h3{color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:10px}
+    .curso-card p{color:var(--text-dim);font-size:.93rem;margin-bottom:18px}
+    .curso-card .tag{
+      display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--green-2);font-weight:600
+    }
+
+    /* ========== SOBRE ========== */
+    #sobre{background:var(--bg-0)}
+    .sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .sobre-photo{
+      position:relative;border-radius:20px;overflow:hidden;
+      border:1px solid var(--border);aspect-ratio:4/5;max-width:480px
+    }
+    .sobre-photo img{width:100%;height:100%;object-fit:cover}
+    .sobre-photo::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(180deg, transparent 50%, rgba(10,15,12,.7) 100%)
+    }
+    .sobre-text p{color:var(--text-dim);font-size:1.05rem;margin-bottom:18px}
+    .sobre-text p strong{color:#fff}
+    .sobre-bullets{margin-top:30px;display:grid;gap:14px}
+    .sobre-bullets li{
+      display:flex;gap:12px;align-items:flex-start;color:var(--text);font-size:.97rem
+    }
+    .sobre-bullets li::before{
+      content:'✓';color:var(--gold);font-weight:800;flex-shrink:0;
+      width:24px;height:24px;border-radius:50%;background:var(--gold-soft);
+      display:flex;align-items:center;justify-content:center;font-size:.85rem
+    }
+
+    /* ========== CONTEÚDO ========== */
+    #conteudo{background:var(--bg-1)}
+    .conteudo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+    .canal-card{
+      background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);
+      padding:32px;transition:transform .3s ease, border-color .3s ease;text-align:center
+    }
+    .canal-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+    .canal-card .canal-icon{
+      width:64px;height:64px;border-radius:16px;margin:0 auto 18px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.6rem;font-weight:800;color:#fff
+    }
+    .canal-yt .canal-icon{background:#FF0000}
+    .canal-ig .canal-icon{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)}
+    .canal-bg .canal-icon{background:var(--green)}
+    .canal-card h3{color:#fff;font-size:1.15rem;margin-bottom:6px}
+    .canal-card p{color:var(--text-dim);font-size:.92rem;margin-bottom:18px}
+    .canal-card a.btn{margin-top:6px}
+
+    /* ========== LEAD ========== */
+    #lead{
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(46,125,50,.18), transparent 60%),
+        var(--bg-0);
+    }
+    .lead-card{
+      max-width:780px;margin:0 auto;background:var(--bg-2);
+      border:1px solid var(--border);border-radius:20px;padding:48px;
+      box-shadow:var(--shadow-lg);text-align:center
+    }
+    .lead-card h2{color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:10px}
+    .lead-card p{color:var(--text-dim);margin-bottom:28px}
+    .lead-form{display:grid;gap:14px;text-align:left}
+    .lead-form label{
+      font-size:.82rem;color:var(--text-dim);font-weight:600;
+      text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;display:block
+    }
+    .lead-form input{
+      width:100%;background:var(--bg-1);border:1px solid var(--border);
+      color:#fff;padding:14px 16px;border-radius:10px;font-size:1rem;
+      transition:border-color .25s ease, box-shadow .25s ease
+    }
+    .lead-form input:focus{
+      outline:none;border-color:var(--gold);
+      box-shadow:0 0 0 4px rgba(242,201,76,.12)
+    }
+    .lead-form .btn{margin-top:8px}
+    .lead-disclaimer{font-size:.78rem;color:var(--text-dim);margin-top:14px}
+
+    /* ========== DEPOIMENTOS ========== */
+    #depoimentos{background:var(--bg-1)}
+    .depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+    .depo-card{
+      background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);
+      padding:28px;position:relative
+    }
+    .depo-card::before{
+      content:'\201C';position:absolute;top:8px;left:18px;
+      font-size:5rem;color:var(--gold);opacity:.18;line-height:1;font-family:Georgia,serif
+    }
+    .depo-text{color:var(--text);font-size:.97rem;margin-bottom:22px;position:relative;z-index:1}
+    .depo-author{display:flex;align-items:center;gap:14px}
+    .depo-avatar{
+      width:48px;height:48px;border-radius:50%;background:var(--gold-soft);
+      color:var(--gold);display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:1.05rem
+    }
+    .depo-author strong{display:block;color:#fff;font-size:.95rem}
+    .depo-author span{color:var(--text-dim);font-size:.82rem}
+    .stars{color:var(--gold);margin-bottom:10px;letter-spacing:2px;font-size:.95rem}
+
+    /* ========== CTA FINAL ========== */
+    #cta{
+      background:linear-gradient(135deg, #0A0F0C 0%, #14211A 100%);
+      border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+      text-align:center
+    }
+    #cta h2{
+      font-size:clamp(1.8rem,3.6vw,2.6rem);color:#fff;font-weight:800;
+      max-width:780px;margin:0 auto 18px;line-height:1.2
+    }
+    #cta h2 .gold{color:var(--gold)}
+    #cta p{color:var(--text-dim);max-width:560px;margin:0 auto 32px}
+    #cta .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* ========== FOOTER ========== */
+    footer{background:var(--bg-0);border-top:1px solid var(--border);padding:60px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+    .footer-col h4{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:16px;
+      text-transform:uppercase;letter-spacing:.1em}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col a{color:var(--text-dim);font-size:.92rem}
+    .footer-col a:hover{color:var(--gold)}
+    .footer-brand p{color:var(--text-dim);font-size:.92rem;margin-top:14px;max-width:320px}
+    .social{display:flex;gap:10px;margin-top:18px}
+    .social a{
+      width:40px;height:40px;border-radius:50%;background:var(--bg-2);
+      border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+      color:var(--text-dim);font-weight:700;font-size:.85rem
+    }
+    .social a:hover{background:var(--gold);color:#1A1A1A;border-color:var(--gold)}
+    .footer-bottom{
+      border-top:1px solid var(--border);padding-top:24px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      color:var(--text-dim);font-size:.85rem
+    }
+
+    /* ========== WHATSAPP FLOAT ========== */
+    .wa-float{
+      position:fixed;right:22px;bottom:22px;z-index:90;
+      width:60px;height:60px;border-radius:50%;background:#25D366;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 14px 30px rgba(37,211,102,.4);
+      transition:transform .25s ease;color:#fff
+    }
+    .wa-float:hover{transform:scale(1.08)}
+    .wa-float svg{width:32px;height:32px}
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px){
+      /* Collapse nav into hamburger on tablets/small laptops */
+      .nav{
+        position:fixed;top:72px;left:0;right:0;
+        background:rgba(10,15,12,.98);backdrop-filter:blur(14px);
+        flex-direction:column;align-items:stretch;gap:0;padding:14px 0;
+        border-bottom:1px solid var(--border);
+        transform:translateY(-150%);transition:transform .3s ease
+      }
+      .nav.open{transform:translateY(0)}
+      .nav a{padding:14px 24px;border-bottom:1px solid var(--border)}
+      .nav a:last-child{border-bottom:none}
+      .nav a::after{display:none}
+      .menu-toggle{display:flex}
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .hero-photo{order:-1;max-width:380px;margin:0 auto}
+      .hero-photo .frame{margin:0 auto}
+      .hero-content{text-align:center}
+      .hero-sub{margin-left:auto;margin-right:auto}
+      .hero-cta{justify-content:center}
+      .hero-trust{justify-content:center}
+      .cursos-grid{grid-template-columns:repeat(2,1fr)}
+      .conteudo-grid{grid-template-columns:1fr 1fr}
+      .depo-grid{grid-template-columns:1fr 1fr}
+      .sobre-grid{grid-template-columns:1fr;gap:40px}
+      .sobre-photo{margin:0 auto}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+    }
+    @media (max-width: 720px){
+      .section{padding:72px 0}
+      .nav{
+        position:fixed;top:72px;left:0;right:0;
+        background:rgba(10,15,12,.98);backdrop-filter:blur(14px);
+        flex-direction:column;align-items:stretch;gap:0;padding:14px 0;
+        border-bottom:1px solid var(--border);
+        transform:translateY(-150%);transition:transform .3s ease
+      }
+      .nav.open{transform:translateY(0)}
+      .nav a{padding:14px 24px;border-bottom:1px solid var(--border)}
+      .nav a:last-child{border-bottom:none}
+      .nav a::after{display:none}
+      .menu-toggle{display:flex}
+      .header-cta .btn-wa{display:none}
+      .authority-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .cursos-grid{grid-template-columns:1fr}
+      .conteudo-grid{grid-template-columns:1fr}
+      .depo-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:30px}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .lead-card{padding:32px 22px}
+      .hero{padding:120px 0 60px}
+    }
+    @media (max-width: 420px){
+      .container{padding:0 18px}
+      .hero-trust{gap:18px}
+    }
+
+    /* Reduz movimento para usuários que pediram */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo" aria-label="Trator na Prática - Início">
+        <img src="/logo.svg" alt="Logo Trator na Prática" />
+        <span class="logo-text">Trator <span>na Prática</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#cta">Contato</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://wa.me/5585998071325" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.821 11.821 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.594 5.357l-.999 3.648 3.894-1.704z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+
+      <!-- Foto do Professor -->
+      <div class="hero-photo">
+        <div class="frame">
+          <img src="/professor.jpg"
+               alt="Prof. Leonardo Monteiro - Especialista em Mecanização Agrícola"
+               fetchpriority="high" />
+        </div>
+        <div class="badge">
+          <strong>+20 anos</strong>
+          de experiência no campo
+        </div>
+      </div>
+
+      <!-- Texto Hero -->
+      <div class="hero-content">
+        <span class="eyebrow">Prof. Leonardo Monteiro</span>
+        <h1 class="hero-title">
+          Mecanização Agrícola<br/>
+          com <span class="gold">Segurança</span><br/>
+          e <span class="green">Eficiência</span>
+        </h1>
+        <p class="hero-sub">
+          Aprenda com quem vive a prática no campo.
+          <strong style="color:#fff">Mais produtividade. Menos riscos. Mais vida.</strong>
+        </p>
+        <div class="hero-cta">
+          <a href="#cursos" class="btn btn-primary">Conheça os Cursos</a>
+          <a href="https://wa.me/5585998071325" class="btn btn-ghost" target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>+10 mil</strong><span>alunos capacitados</span></div>
+          <div><strong>Brasil</strong><span>treinamentos em todo o país</span></div>
+          <div><strong>NR-31</strong><span>conteúdo certificado</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================== AUTHORITY ============================== -->
+  <section class="authority" aria-label="Autoridade do Prof. Leonardo Monteiro">
+    <div class="container authority-grid">
+      <div class="authority-item">
+        <span class="num">+20</span>
+        <span class="lbl">anos de experiência no campo</span>
+      </div>
+      <div class="authority-item">
+        <span class="num">Especialista</span>
+        <span class="lbl">em mecanização agrícola</span>
+      </div>
+      <div class="authority-item">
+        <span class="num">+10 mil</span>
+        <span class="lbl">alunos capacitados</span>
+      </div>
+      <div class="authority-item">
+        <span class="num">Brasil</span>
+        <span class="lbl">treinamentos em todo o país</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CURSOS ============================== -->
+  <section class="section" id="cursos">
+    <div class="container">
+      <div class="cursos-head">
+        <div>
+          <span class="eyebrow">Cursos &amp; Treinamentos</span>
+          <h2 class="section-title">Capacitação prática para quem opera no campo</h2>
+          <p class="section-subtitle">
+            Conteúdo direto, técnico e fundamentado em mais de 20 anos de campo. Foco em
+            segurança, produtividade e prevenção de acidentes.
+          </p>
+        </div>
+        <a href="https://wa.me/5585998071325" class="btn btn-primary" target="_blank" rel="noopener">
+          Quero me capacitar
+        </a>
+      </div>
+
+      <div class="cursos-grid">
+        <article class="curso-card">
+          <div class="curso-icon">31</div>
+          <h3>NR-31</h3>
+          <p>Norma Regulamentadora aplicada à realidade da agricultura brasileira, com casos práticos de campo.</p>
+          <span class="tag">Certificado</span>
+        </article>
+
+        <article class="curso-card">
+          <div class="curso-icon">⚙</div>
+          <h3>Operação Segura</h3>
+          <p>Procedimentos corretos para operar tratores e implementos com segurança máxima e eficiência.</p>
+          <span class="tag">Hands-on</span>
+        </article>
+
+        <article class="curso-card">
+          <div class="curso-icon">🛠</div>
+          <h3>Manutenção Preventiva</h3>
+          <p>Rotinas de manutenção que aumentam a vida útil das máquinas e reduzem paradas não programadas.</p>
+          <span class="tag">Técnico</span>
+        </article>
+
+        <article class="curso-card">
+          <div class="curso-icon">!</div>
+          <h3>Prevenção de Acidentes</h3>
+          <p>Identificação de riscos, análise de causas e protocolos de prevenção baseados em casos reais.</p>
+          <span class="tag">Salva vidas</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SOBRE ============================== -->
+  <section class="section" id="sobre">
+    <div class="container sobre-grid">
+      <div class="sobre-photo">
+        <img src="/professor.jpg" alt="Prof. Leonardo Monteiro" loading="lazy" />
+      </div>
+      <div class="sobre-text">
+        <span class="eyebrow">Sobre o Professor</span>
+        <h2 class="section-title">Conhecimento que vem do campo, não só da sala de aula</h2>
+        <p>
+          Sou o <strong>Prof. Leonardo Monteiro</strong>, especialista em mecanização agrícola
+          com mais de <strong>20 anos de experiência</strong> no campo. Minha missão é compartilhar
+          conhecimento para reduzir acidentes, preservar vidas e aumentar a eficiência nas
+          operações agrícolas.
+        </p>
+        <p>
+          Cada conteúdo é construído com base em casos reais, vivência prática e fundamentação
+          técnica — para que você opere com mais segurança e produza mais, com menos risco.
+        </p>
+        <ul class="sobre-bullets">
+          <li>Especialista em NR-31 e segurança em máquinas agrícolas</li>
+          <li>Treinamentos para produtores, operadores e empresas em todo o Brasil</li>
+          <li>Conteúdo prático, técnico e baseado em casos reais</li>
+          <li>+10 mil alunos já capacitados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CONTEÚDO GRATUITO ============================== -->
+  <section class="section" id="conteudo">
+    <div class="container">
+      <div style="text-align:center;max-width:680px;margin:0 auto">
+        <span class="eyebrow">Conteúdo Gratuito</span>
+        <h2 class="section-title">Aprenda todo dia com a gente</h2>
+        <p class="section-subtitle" style="margin:0 auto">
+          Vídeos, posts e artigos sobre mecanização, segurança e operação no campo.
+          Acompanhe nossos canais oficiais.
+        </p>
+      </div>
+
+      <div class="conteudo-grid">
+        <div class="canal-card canal-yt">
+          <div class="canal-icon">▶</div>
+          <h3>YouTube</h3>
+          <p>Vídeos práticos, análises de casos e dicas de operação</p>
+          <a href="https://www.youtube.com/@tratornapratica" target="_blank" rel="noopener" class="btn btn-ghost">
+            Inscrever-se
+          </a>
+        </div>
+        <div class="canal-card canal-ig">
+          <div class="canal-icon">◎</div>
+          <h3>Instagram</h3>
+          <p>Conteúdo diário, bastidores e respostas rápidas</p>
+          <a href="https://www.instagram.com/profleonardomonteiro/" target="_blank" rel="noopener" class="btn btn-ghost">
+            Seguir
+          </a>
+        </div>
+        <div class="canal-card canal-bg">
+          <div class="canal-icon">✎</div>
+          <h3>Blog</h3>
+          <p>Artigos técnicos com aprofundamento em NR-31, NR-12 e mais</p>
+          <a href="#" class="btn btn-ghost">Ler artigos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CAPTURA DE LEAD ============================== -->
+  <section class="section" id="lead">
+    <div class="container">
+      <div class="lead-card">
+        <span class="eyebrow">Receba conteúdo exclusivo</span>
+        <h2>Quer treinar sua equipe ou se capacitar?</h2>
+        <p>Deixe seu contato. Em até 24h falamos com você com a melhor solução para o seu caso.</p>
+
+        <form class="lead-form"
+              action="https://wa.me/5585998071325"
+              method="get"
+              onsubmit="return tpEnviarLead(event)"
+              novalidate>
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                   autocomplete="name" required />
+          </div>
+          <div>
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000"
+                   autocomplete="tel" required />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com"
+                   autocomplete="email" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Quero falar com a equipe
+          </button>
+          <p class="lead-disclaimer">
+            Ao enviar, você concorda em receber contato pela equipe Trator na Prática.
+            Seus dados estão seguros e não serão compartilhados.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== DEPOIMENTOS ============================== -->
+  <section class="section" id="depoimentos">
+    <div class="container">
+      <div style="text-align:center;max-width:680px;margin:0 auto">
+        <span class="eyebrow">Depoimentos</span>
+        <h2 class="section-title">O que dizem quem já fez</h2>
+        <p class="section-subtitle" style="margin:0 auto">
+          Operadores, produtores e empresas que aplicaram o conhecimento e mudaram a forma de operar no campo.
+        </p>
+      </div>
+
+      <div class="depo-grid">
+        <article class="depo-card">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">
+            "O conteúdo do Prof. Leonardo mudou totalmente como a gente conduz o trator na fazenda.
+            Hoje a equipe opera com muito mais segurança."
+          </p>
+          <div class="depo-author">
+            <div class="depo-avatar">JR</div>
+            <div>
+              <strong>João Ribeiro</strong>
+              <span>Produtor rural - GO</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="depo-card">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">
+            "Treinamento direto, prático e técnico. Reduzimos quebras e ainda diminuímos
+            os incidentes na operação. Vale cada minuto."
+          </p>
+          <div class="depo-author">
+            <div class="depo-avatar">MS</div>
+            <div>
+              <strong>Marcos Silva</strong>
+              <span>Gerente agrícola - MT</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="depo-card">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">
+            "Material excelente para quem está começando e também para quem já tem
+            experiência. A abordagem prática faz toda a diferença."
+          </p>
+          <div class="depo-author">
+            <div class="depo-avatar">AC</div>
+            <div>
+              <strong>Ana Costa</strong>
+              <span>Técnica agrícola - MG</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CTA FINAL ============================== -->
+  <section class="section" id="cta">
+    <div class="container">
+      <span class="eyebrow">Comece agora</span>
+      <h2>Trabalhe com mais <span class="gold">segurança</span> e mais eficiência no campo</h2>
+      <p>Fale com a equipe Trator na Prática e descubra o melhor caminho para você ou sua empresa.</p>
+      <div class="btn-row">
+        <a href="https://wa.me/5585998071325" class="btn btn-primary" target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+        <a href="mailto:contato@tratornapratica.com.br" class="btn btn-ghost">
+          contato@tratornapratica.com.br
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#inicio" class="logo">
+            <img src="/logo.svg" alt="Logo Trator na Prática" />
+            <span class="logo-text">Trator <span>na Prática</span></span>
+          </a>
+          <p>Mecanização agrícola com segurança e eficiência. Conhecimento prático para produzir mais e proteger vidas no campo.</p>
+          <div class="social" aria-label="Redes sociais">
+            <a href="https://www.youtube.com/@tratornapratica" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            <a href="https://www.instagram.com/profleonardomonteiro/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://wa.me/5585998071325" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#conteudo">Conteúdo</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <ul>
+            <li><a href="#cursos">NR-31</a></li>
+            <li><a href="#cursos">Operação Segura</a></li>
+            <li><a href="#cursos">Manutenção Preventiva</a></li>
+            <li><a href="#cursos">Prevenção de Acidentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5585998071325" target="_blank" rel="noopener">WhatsApp: (85) 99807-1325</a></li>
+            <li><a href="mailto:contato@tratornapratica.com.br">contato@tratornapratica.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Trator na Prática. Todos os direitos reservados.</span>
+        <span>Prof. Leonardo Monteiro &middot; Mecanização Agrícola</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================== WHATSAPP FLOAT ============================== -->
+  <a href="https://wa.me/5585998071325" class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.821 11.821 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.594 5.357l-.999 3.648 3.894-1.704zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+  </a>
+
+  <!-- ============================== JS ============================== -->
+  <script>
+    // Atualiza o ano do footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle do menu mobile
+    (function(){
+      var btn = document.getElementById('menuToggle');
+      var nav = document.getElementById('nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', function(){
+        var isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+      // Fecha o menu ao clicar em um link
+      nav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // Submit do formulário de lead -> abre WhatsApp com mensagem pré-preenchida
+    function tpEnviarLead(e){
+      e.preventDefault();
+      var nome  = (document.getElementById('nome').value || '').trim();
+      var wa    = (document.getElementById('whatsapp').value || '').trim();
+      var email = (document.getElementById('email').value || '').trim();
+      if(!nome || !wa || !email){
+        alert('Por favor, preencha todos os campos.');
+        return false;
+      }
+      var msg = 'Olá! Quero falar com a equipe Trator na Prática.%0A'
+              + '%0A*Nome:* ' + encodeURIComponent(nome)
+              + '%0A*WhatsApp:* ' + encodeURIComponent(wa)
+              + '%0A*E-mail:* ' + encodeURIComponent(email);
+      var url = 'https://wa.me/5585998071325?text=' + msg;
+      window.open(url, '_blank', 'noopener');
+      return false;
+    }
+
+    // Header com fundo mais opaco ao rolar
+    (function(){
+      var header = document.querySelector('.header');
+      if(!header) return;
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 30){
+          header.style.background = 'rgba(10,15,12,.92)';
+        } else {
+          header.style.background = 'rgba(10,15,12,.78)';
+        }
+      }, { passive:true });
+    })();
+  </script>
+
+</body>
+</html>
