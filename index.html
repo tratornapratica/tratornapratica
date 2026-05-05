@@ -1165,8 +1165,109 @@
       onScroll();
     })();
 
-    if(document.getElementById('chartTiposAcidente')){const ctx=document.getElementById('chartTiposAcidente').getContext('2d');new Chart(ctx,{type:'bar',data:{labels:['Colisao','Atropelamento','Capotamento','Esmagamento','Queda de Maquina','Choque Eletrico','Acidente com TDP','Tombamento'],datasets:[{label:'Numero de Casos',data:[400,250,220,180,150,100,80,60],backgroundColor:['#DC2626','#EF4444','#F87171','#FCA5A5','#FECACA','#FEE2E2','#FEF2F2','#FFE4E4'],borderColor:'#991B1B',borderWidth:2,borderRadius:8}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:true,labels:{color:'#E8ECE7'}},title:{display:true,text:'Tipos de Acidentes com Tratores',font:{size:16,weight:'bold'},color:'#E8ECE7'}},scales:{x:{grid:{color:'#10171280'},ticks:{color:'#A8B0AB'}},y:{grid:{display:false},ticks:{color:'#E8ECE7'}}}}});}    if(document.getElementById('chartEvolucaoAnual')){const ctx=document.getElementById('chartEvolucaoAnual').getContext('2d');new Chart(ctx,{type:'line',data:{labels:['2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],datasets:[{label:'Registros por Ano',data:[80,650,220,180,170,120,10,15,20,30,45,60,85,110,140],borderColor:'#DC2626',backgroundColor:'rgba(220,38,38,0.1)',borderWidth:3,fill:true,tension:0.4,pointRadius:6,pointBackgroundColor:'#DC2626',pointBorderColor:'#FFFFFF',pointBorderWidth:2}]},options:{responsive:true,plugins:{legend:{display:true,labels:{color:'#E8ECE7'}},title:{display:true,text:'Evolucao Anual de Registros',font:{size:16,weight:'bold'},color:'#E8ECE7'}},scales:{x:{grid:{color:'#10171280'},ticks:{color:'#A8B0AB'}},y:{beginAtZero:true,grid:{color:'10171280'},ticks:{color:'#A8B0AB'}}}}}); }
-    if(document.getElementById('accidentTypePieChart')){const ctxPie=document.getElementById('accidentTypePieChart').getContext('2d');const totalAccidents=1440;new Chart(ctxPie,{type:'doughnut',data:{labels:['Colisao','Atropelamento','Capotamento','Esmagamento','Queda de Maquina','Choque Eletrico','Acidente com TDP','Tombamento'],datasets:[{data:[400,250,220,180,150,100,80,60],backgroundColor:['#FF6B6B','#FF8C42','#FFD93D','#FF6B9D','#C44569','#F38181','#AA96DA','#FCBAD3'],borderColor:'#1a1a1a',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{position:'bottom',labels:{font:{size:12,family:"Segoe UI, Tahoma, Geneva, Verdana, sans-serif"},color:'#E8ECE7',padding:15,usePointStyle:true}},tooltip:{backgroundColor:'rgba(0, 0, 0, 0.8)',titleFont:{size:14,weight:'bold'},bodyFont:{size:12},padding:12,displayColors:true,callbacks:{label:function(context){const value=context.parsed;const percentage=((value/totalAccidents)*100).toFixed(1);return context.label+': '+value+' casos ('+percentage+'%)'}}}}}); }
+    window.addEventListener('load', function() {
+      if(typeof Chart === 'undefined') {
+        console.error('Chart.js not loaded');
+        return;
+      }
+      
+      if(document.getElementById('chartTiposAcidente')){
+        const ctx = document.getElementById('chartTiposAcidente').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Colisão', 'Atropelamento', 'Capotamento', 'Esmagamento', 'Queda de Máquina', 'Choque Elétrico', 'Acidente com TDP', 'Tombamento'],
+            datasets: [{
+              label: 'Número de Casos',
+              data: [400, 250, 220, 180, 150, 100, 80, 60],
+              backgroundColor: ['#DC2626', '#EF4444', '#F87171', '#FCA5A5', '#FECACA', '#FEE2E2', '#FEF2F2', '#FFE4E4'],
+              borderColor: '#991B1B',
+              borderWidth: 2,
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            indexAxis: 'y',
+            plugins: {
+              legend: { display: true, labels: { color: '#E8ECE7' } },
+              title: { display: true, text: 'Tipos de Acidentes com Tratores', font: { size: 16, weight: 'bold' }, color: '#E8ECE7' }
+            },
+            scales: {
+              x: { grid: { color: '#10171280' }, ticks: { color: '#A8B0AB' } },
+              y: { grid: { display: false }, ticks: { color: '#E8ECE7' } }
+            }
+          }
+        });
+      }
+
+      if(document.getElementById('chartEvolucaoAnual')){
+        const ctx = document.getElementById('chartEvolucaoAnual').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            datasets: [{
+              label: 'Registros por Ano',
+              data: [80, 650, 220, 180, 170, 120, 10, 15, 20, 30, 45, 60, 85, 110, 140],
+              borderColor: '#DC2626',
+              backgroundColor: 'rgba(220, 38, 38, 0.1)',
+              borderWidth: 3,
+              fill: true,
+              tension: 0.4,
+              pointRadius: 6,
+              pointBackgroundColor: '#DC2626',
+              pointBorderColor: '#FFFFFF',
+              pointBorderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: true, labels: { color: '#E8ECE7' } },
+              title: { display: true, text: 'Evolução Anual de Registros', font: { size: 16, weight: 'bold' }, color: '#E8ECE7' }
+            },
+            scales: {
+              x: { grid: { color: '#10171280' }, ticks: { color: '#A8B0AB' } },
+              y: { beginAtZero: true, grid: { color: '#10171280' }, ticks: { color: '#A8B0AB' } }
+            }
+          }
+        });
+      }
+
+      if(document.getElementById('accidentTypePieChart')){
+        const ctxPie = document.getElementById('accidentTypePieChart').getContext('2d');
+        const totalAccidents = 1440;
+        new Chart(ctxPie, {
+          type: 'doughnut',
+          data: {
+            labels: ['Colisão', 'Atropelamento', 'Capotamento', 'Esmagamento', 'Queda de Máquina', 'Choque Elétrico', 'Acidente com TDP', 'Tombamento'],
+            datasets: [{
+              data: [400, 250, 220, 180, 150, 100, 80, 60],
+              backgroundColor: ['#FF6B6B', '#FF8C42', '#FFD93D', '#FF6B9D', '#C44569', '#F38181', '#AA96DA', '#FCBAD3'],
+              borderColor: '#1a1a1a',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { position: 'bottom', labels: { font: { size: 12 }, color: '#E8ECE7', padding: 15, usePointStyle: true } },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    const value = context.parsed;
+                    const percentage = ((value / totalAccidents) * 100).toFixed(1);
+                    return context.label + ': ' + value + ' casos (' + percentage + '%)';
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+    });
   </script>
 
 </body>
