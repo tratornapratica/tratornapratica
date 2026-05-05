@@ -761,6 +761,16 @@
         </div>
       </div>
 
+      <!-- Gráficos Interativos -->
+      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
+          <canvas id="chartTiposAcidente" style="max-height: 400px;"></canvas>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
+          <canvas id="chartEvolucaoAnual" style="max-height: 400px;"></canvas>
+        </div>
+      </div>
+
       <div style="margin-top: 40px; text-align: center; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px dashed var(--border);">
         <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 12px;">Previna-se contra o risco</h4>
         <p style="color: #A8B0AB; font-size: 0.9rem; margin-bottom: 20px;">Baixe nosso checklist técnico de segurança baseado nos dados de acidentes do LIMA/UFC.</p>
@@ -1093,6 +1103,9 @@
   </a>
 
   <!-- ============================== JS ============================== -->
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1145,6 +1158,9 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
+
+    if(document.getElementById('chartTiposAcidente')){const ctx=document.getElementById('chartTiposAcidente').getContext('2d');new Chart(ctx,{type:'bar',data:{labels:['Colisao','Atropelamento','Capotamento','Esmagamento','Queda de Maquina','Choque Eletrico','Acidente com TDP','Tombamento'],datasets:[{label:'Numero de Casos',data:[400,250,220,180,150,100,80,60],backgroundColor:['#DC2626','#EF4444','#F87171','#FCA5A5','#FECACA','#FEE2E2','#FEF2F2','#FFE4E4'],borderColor:'#991B1B',borderWidth:2,borderRadius:8}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:true,labels:{color:'#E8ECE7'}},title:{display:true,text:'Tipos de Acidentes com Tratores',font:{size:16,weight:'bold'},color:'#E8ECE7'}},scales:{x:{grid:{color:'#10171280'},ticks:{color:'#A8B0AB'}},y:{grid:{display:false},ticks:{color:'#E8ECE7'}}}}});}
+    if(document.getElementById('chartEvolucaoAnual')){const ctx=document.getElementById('chartEvolucaoAnual').getContext('2d');new Chart(ctx,{type:'line',data:{labels:['2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],datasets:[{label:'Registros por Ano',data:[80,650,220,180,170,120,10,15,20,30,45,60,85,110,140],borderColor:'#DC2626',backgroundColor:'rgba(220,38,38,0.1)',borderWidth:3,fill:true,tension:0.4,pointRadius:6,pointBackgroundColor:'#DC2626',pointBorderColor:'#FFFFFF',pointBorderWidth:2}]},options:{responsive:true,plugins:{legend:{display:true,labels:{color:'#E8ECE7'}},title:{display:true,text:'Evolucao Anual de Registros',font:{size:16,weight:'bold'},color:'#E8ECE7'}},scales:{x:{grid:{color:'#10171280'},ticks:{color:'#A8B0AB'}},y:{beginAtZero:true,grid:{color:'10171280'},ticks:{color:'#A8B0AB'}}}}});}
   </script>
 
 </body>
