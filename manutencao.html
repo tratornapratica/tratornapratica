@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal de Manutenção | Trator na Prática</title>
+  <title>Desbloqueie o Controle Total | TractorCare</title>
   <meta name="description" content="Acesse o sistema de controle de manutenção de tratores. Cadastre seu e-mail para acessar o TractorCare." />
   <meta name="robots" content="noindex, follow" />
   
@@ -18,7 +18,9 @@
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{
       font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
-      background:linear-gradient(135deg, #070A08 0%, #0B0F0C 50%, #141B16 100%);
+      background:url("/assets/images/background_tractor_care.jpg") no-repeat center center fixed;
+      background-size:cover;
+      background-color:#0B0F0C; /* Fallback color */
       color:#E8ECE7;
       line-height:1.6;
       overflow-x:hidden;
@@ -95,6 +97,15 @@
       text-transform:uppercase;font-weight:600
     }
 
+    .lead-text{
+      font-size:.95rem;color:var(--text);line-height:1.8;
+      margin-top:30px;margin-bottom:0;padding:20px;
+      background:rgba(245,184,0,.08);
+      border-left:4px solid var(--gold);
+      border-radius:4px;text-align:center;
+      font-weight:500;letter-spacing:.02em
+    }
+
     /* ===== FORM ===== */
     .portal-form{
       display:flex;flex-direction:column;gap:20px
@@ -161,6 +172,26 @@
       opacity:.6;cursor:not-allowed;transform:none
     }
 
+    .btn-submit.loading{
+      position:relative;color:transparent
+    }
+
+    .btn-submit.loading::after{
+      content:'';
+      position:absolute;
+      width:16px;height:16px;
+      top:50%;left:50%;
+      margin-left:-8px;margin-top:-8px;
+      border:2px solid rgba(26,26,26,.3);
+      border-radius:50%;
+      border-top-color:#1A1A1A;
+      animation:spin .6s linear infinite
+    }
+
+    @keyframes spin{
+      to{transform:rotate(360deg)}
+    }
+
     /* ===== MESSAGE ===== */
     .form-message{
       padding:12px 16px;
@@ -184,6 +215,20 @@
       background:rgba(200,50,50,.2);
       border:1px solid rgba(200,50,50,.5);
       color:#FF7F7F
+    }
+
+    /* ===== AUTHORITY & SOCIAL PROOF ===== */
+    .authority-section{
+      margin-top:30px;padding:20px;background:rgba(43,125,50,.1);
+      border:1px solid rgba(43,125,50,.3);border-radius:8px;text-align:center
+    }
+
+    .authority-text{
+      font-size:.9rem;color:var(--text);margin-bottom:10px;font-weight:600
+    }
+
+    .social-proof{
+      font-size:.85rem;color:var(--text-dim);margin:0;font-style:italic
     }
 
     /* ===== FOOTER ===== */
@@ -224,13 +269,15 @@
 <body>
   <div class="container">
     <!-- Header -->
-    <div class="portal-header">
-      <div class="portal-logo">
-        <img src="/assets/images/logo.png" alt="Trator na Prática" />
+      <div class="portal-header">
+        <div class="portal-logo">
+          <img src="/assets/images/logo_final_v1.png" alt="Trator na Prática" />
+        </div>
+        <h1 class="portal-title">Desbloqueie o Controle Total da Manutenção do Seu Trator!</h1>
+        <p class="portal-subtitle">Gerencie sua frota, reduza custos e maximize a vida útil dos seus equipamentos com nossa plataforma exclusiva.</p>
       </div>
-      <h1 class="portal-title">TractorCare</h1>
-      <p class="portal-subtitle">Controle de Manutenção de Tratores</p>
-    </div>
+
+      <p class="lead-text">Milhares de produtores já estão otimizando suas operações. Não fique para trás! Cadastre seu e-mail e tenha acesso instantâneo ao seu painel de controle.</p>
 
     <!-- Form -->
     <form class="portal-form" id="accessForm">
@@ -247,10 +294,16 @@
         />
       </div>
 
-      <button type="submit" class="btn-submit">Acessar Portal</button>
+      <button type="submit" class="btn-submit">Acessar TractorCare Grátis</button>
 
       <div class="form-message" id="formMessage"></div>
     </form>
+
+    <!-- Authority & Social Proof -->
+    <div class="authority-section">
+      <p class="authority-text"><strong>Desenvolvido pelo Prof. Leonardo Monteiro</strong>, especialista em mecanização agrícola com mais de 20 anos de experiência no campo.</p>
+      <p class="social-proof">Mais de 10 mil produtores já transformaram sua gestão com o TractorCare.</p>
+    </div>
 
     <!-- Footer -->
     <div class="portal-footer">
