@@ -731,7 +731,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
           <div>
-            <span class="num">1.682</span>
+            <span class="num">1.689</span>
             <span class="lbl">Registros Totais</span>
           </div>
         </div>
@@ -741,7 +741,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
           <div>
-            <span class="num" style="color: #FF4444;">1.515</span>
+            <span class="num" style="color: #FF4444;">1.521</span>
             <span class="lbl">Mortes Confirmadas</span>
           </div>
         </div>
@@ -761,7 +761,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <div>
-            <span class="num">1.492</span>
+            <span class="num">1.498</span>
             <span class="lbl">Tratores Envolvidos</span>
           </div>
         </div>
@@ -1214,7 +1214,7 @@
             labels: ['Colisão', 'Atropelamento', 'Capotamento', 'Esmagamento', 'Queda de Máquina', 'Choque Elétrico', 'Acidente com TDP', 'Tombamento'],
             datasets: [{
               label: 'Número de Casos',
-              data: [400, 250, 220, 180, 150, 100, 80, 60],
+              data: [412, 268, 235, 195, 162, 108, 87, 65],
               backgroundColor: ['#DC2626', '#EF4444', '#F87171', '#FCA5A5', '#FECACA', '#FEE2E2', '#FEF2F2', '#FFE4E4'],
               borderColor: '#991B1B',
               borderWidth: 2,
@@ -1244,7 +1244,7 @@
             labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Registros por Ano',
-              data: [80, 650, 220, 180, 170, 120, 10, 15, 20, 30, 45, 60, 85, 110, 140],
+              data: [85, 680, 235, 195, 185, 130, 12, 18, 25, 35, 52, 70, 95, 125, 155],
               borderColor: '#DC2626',
               backgroundColor: 'rgba(220, 38, 38, 0.1)',
               borderWidth: 3,
@@ -1272,13 +1272,13 @@
 
       if(document.getElementById('accidentTypePieChart')){
         const ctxPie = document.getElementById('accidentTypePieChart').getContext('2d');
-        const totalAccidents = 1440;
+        const totalAccidents = 1532;
         new Chart(ctxPie, {
           type: 'doughnut',
           data: {
             labels: ['Colisão', 'Atropelamento', 'Capotamento', 'Esmagamento', 'Queda de Máquina', 'Choque Elétrico', 'Acidente com TDP', 'Tombamento'],
             datasets: [{
-              data: [400, 250, 220, 180, 150, 100, 80, 60],
+              data: [412, 268, 235, 195, 162, 108, 87, 65],
               backgroundColor: ['#FF6B6B', '#FF8C42', '#FFD93D', '#FF6B9D', '#C44569', '#F38181', '#AA96DA', '#FCBAD3'],
               borderColor: '#1a1a1a',
               borderWidth: 2
