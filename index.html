@@ -783,6 +783,26 @@
         <canvas id="accidentTypePieChart" style="max-height: 450px;"></canvas>
       </div>
 
+      <!-- Novos Gráficos Comparativos -->
+      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px;">
+        <!-- Gráfico de Localização -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
+          <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 20px; text-align: center; font-size: 1rem;">Onde os Tratores se Acidentam</h4>
+          <canvas id="chartLocalizacao" style="max-height: 400px;"></canvas>
+        </div>
+        <!-- Gráfico de Letalidade Detalhada -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
+          <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 20px; text-align: center; font-size: 1rem;">Taxa de Letalidade por Tipo</h4>
+          <canvas id="chartLetalidade" style="max-height: 400px;"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico Comparativo Rodovia vs Lavoura -->
+      <div style="margin-top: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 20px; text-align: center; font-size: 1.1rem;">Rodovia vs Lavoura: Comparação de Letalidade</h4>
+        <canvas id="chartRodoviaVsLavoura" style="max-height: 400px;"></canvas>
+      </div>
+
       <!-- Casos Reais -->
       <div style="margin-top: 60px;">
         <h3 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 30px; text-align: center; font-size: 1.3rem;">Casos <span class="gold">Reais</span></h3>
@@ -1345,6 +1365,107 @@
                   }
                 }
               }
+            }
+          }
+        });
+      }
+
+      // Gráfico de Localização (Onde os Tratores se Acidentam)
+      if(document.getElementById('chartLocalizacao')){
+        const ctxLoc = document.getElementById('chartLocalizacao').getContext('2d');
+        new Chart(ctxLoc, {
+          type: 'bar',
+          data: {
+            labels: ['Lavoura', 'Rodovia', 'Propriedade Rural', 'Outros'],
+            datasets: [{
+              label: 'Número de Acidentes',
+              data: [1690, 1386, 0, 0],
+              backgroundColor: ['#FF6B6B', '#4CAF50', '#FFD93D', '#9C27B0'],
+              borderColor: '#1a1a1a',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { display: true, labels: { font: { size: 12 }, color: '#E8ECE7', padding: 15 } },
+              tooltip: { callbacks: { label: function(context) { return context.parsed.x + ' acidentes'; } } }
+            },
+            scales: {
+              x: { ticks: { color: '#A8B0AB' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+              y: { ticks: { color: '#A8B0AB' }, grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Gráfico de Letalidade Detalhada
+      if(document.getElementById('chartLetalidade')){
+        const ctxLet = document.getElementById('chartLetalidade').getContext('2d');
+        new Chart(ctxLet, {
+          type: 'bar',
+          data: {
+            labels: ['Atropelamento', 'Queda', 'Capotamento', 'Esmagamento', 'Choque Elétrico', 'TDP', 'Colisão', 'Tombamento'],
+            datasets: [{
+              label: 'Taxa de Letalidade (%)',
+              data: [95.87, 91.03, 82.38, 78.46, 65.74, 62.07, 45.63, 38.46],
+              backgroundColor: ['#C8102E', '#E74C3C', '#E67E22', '#F39C12', '#F1C40F', '#F4D03F', '#52BE80', '#48C9B0'],
+              borderColor: '#1a1a1a',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { display: true, labels: { font: { size: 12 }, color: '#E8ECE7', padding: 15 } },
+              tooltip: { callbacks: { label: function(context) { return context.parsed.x.toFixed(2) + '%'; } } }
+            },
+            scales: {
+              x: { ticks: { color: '#A8B0AB' }, grid: { color: 'rgba(255,255,255,0.05)' }, max: 100 },
+              y: { ticks: { color: '#A8B0AB' }, grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Gráfico Comparativo Rodovia vs Lavoura
+      if(document.getElementById('chartRodoviaVsLavoura')){
+        const ctxComp = document.getElementById('chartRodoviaVsLavoura').getContext('2d');
+        new Chart(ctxComp, {
+          type: 'bar',
+          data: {
+            labels: ['Acidentes Registrados', 'Mortes Confirmadas', 'Taxa de Letalidade (%)'],
+            datasets: [
+              {
+                label: 'Rodovia (PRF)',
+                data: [1386, 36, 2.59],
+                backgroundColor: '#4CAF50',
+                borderColor: '#1a1a1a',
+                borderWidth: 1
+              },
+              {
+                label: 'Lavoura (LIMA)',
+                data: [1690, 1522, 90.17],
+                backgroundColor: '#C8102E',
+                borderColor: '#1a1a1a',
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { display: true, labels: { font: { size: 12 }, color: '#E8ECE7', padding: 15 } },
+              tooltip: { callbacks: { label: function(context) { return context.dataset.label + ': ' + context.parsed.y.toFixed(2); } } }
+            },
+            scales: {
+              x: { ticks: { color: '#A8B0AB' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+              y: { ticks: { color: '#A8B0AB' }, grid: { color: 'rgba(255,255,255,0.05)' } }
             }
           }
         });
