@@ -722,7 +722,7 @@
     <div class="container">
       <div class="section-head" style="text-align: center; margin-bottom: 40px;">
         <h2 class="section-title">Estatísticas de <span class="gold">Acidentes</span></h2>
-        <p style="color: #A8B0AB; max-width: 700px; margin: 10px auto 0;">Dados reais sistematizados pelo Banco LIMA/UFC sobre acidentes com máquinas agrícolas no Brasil. Fusão Epidemiológica PRF + LIMA · 3.089 registros · 28 UFs · 2007–2026.</p>
+        <p style="color: #A8B0AB; max-width: 700px; margin: 10px auto 0;">Dados reais sistematizados pelo Banco LIMA/UFC sobre acidentes com máquinas agrícolas no Brasil. Fusão Epidemiológica PRF + LIMA · 3.094 registros · 27 UFs · 2010–2026.</p>
       </div>
       
       <div class="authority-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
@@ -731,7 +731,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
           <div>
-            <span class="num">3.089</span>
+            <span class="num">3.094</span>
             <span class="lbl">Registros Totais (Fusão PRF+LIMA)</span>
           </div>
         </div>
@@ -741,7 +741,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
           <div>
-            <span class="num" style="color: #FF4444;">1.563</span>
+            <span class="num" style="color: #FF4444;">1.574</span>
             <span class="lbl">Mortes Confirmadas</span>
           </div>
         </div>
@@ -751,7 +751,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           </div>
           <div>
-            <span class="num">50,60%</span>
+            <span class="num">50,9%</span>
             <span class="lbl">Taxa de Fatalidade Global</span>
           </div>
         </div>
@@ -761,7 +761,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <div>
-            <span class="num">89,82%</span>
+            <span class="num">90,1%</span>
             <span class="lbl">Letalidade Rural (LIMA)</span>
           </div>
         </div>
@@ -1281,7 +1281,7 @@
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
               label: 'Número de Casos',
-              data: [389, 425, 299, 227, 218, 217, 128, 95],
+              data: [392, 425, 299, 227, 220, 217, 128, 78],
               backgroundColor: ['#DC2626', '#EF4444', '#F87171', '#FCA5A5', '#FECACA', '#FEE2E2', '#FEF2F2', '#FFE4E4'],
               borderColor: '#991B1B',
               borderWidth: 2,
@@ -1311,7 +1311,7 @@
             labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Registros por Ano',
-              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 63, 106],
+              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 64, 110],
               borderColor: '#DC2626',
               backgroundColor: 'rgba(220, 38, 38, 0.1)',
               borderWidth: 3,
@@ -1339,13 +1339,13 @@
 
       if(document.getElementById('accidentTypePieChart')){
         const ctxPie = document.getElementById('accidentTypePieChart').getContext('2d');
-        const totalAccidents = 1998;
+        const totalAccidents = 1986;
         new Chart(ctxPie, {
           type: 'doughnut',
           data: {
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
-              data: [389, 425, 299, 227, 218, 217, 128, 95],
+              data: [392, 425, 299, 227, 220, 217, 128, 78],
               backgroundColor: ['#FF6B6B', '#FF8C42', '#FFD93D', '#FF6B9D', '#C44569', '#F38181', '#AA96DA', '#FCBAD3'],
               borderColor: '#1a1a1a',
               borderWidth: 2
@@ -1379,7 +1379,7 @@
             labels: ['Lavoura', 'Rodovia', 'Propriedade Rural', 'Outros'],
             datasets: [{
               label: 'Número de Acidentes',
-              data: [1700, 1389, 0, 0],
+              data: [1705, 1388, 0, 0],
               backgroundColor: ['#FF6B6B', '#4CAF50', '#FFD93D', '#9C27B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1410,7 +1410,7 @@
             labels: ['Atropelamento', 'Colisão', 'Capotamento', 'Esmagamento', 'Queda', 'Colisão Traseira', 'Colisão Lateral', 'Colisão Transversal'],
             datasets: [{
               label: 'Taxa de Letalidade (%)',
-              data: [95.87, 92.54, 82.38, 82.03, 78.95, 1.65, 0.00, 0.46],
+              data: [95.45, 92.6, 82.38, 82.03, 91.03, 1.65, 0.00, 0.46],
               backgroundColor: ['#C8102E', '#E74C3C', '#E67E22', '#F39C12', '#F1C40F', '#F4D03F', '#52BE80', '#48C9B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1442,14 +1442,14 @@
             datasets: [
               {
                 label: 'Rodovia (PRF)',
-                data: [1389, 36, 2.59],
+                data: [1388, 36, 2.59],
                 backgroundColor: '#4CAF50',
                 borderColor: '#1a1a1a',
                 borderWidth: 1
               },
               {
                 label: 'Lavoura (LIMA)',
-                data: [1700, 1527, 89.82],
+                data: [1705, 1537, 90.15],
                 backgroundColor: '#C8102E',
                 borderColor: '#1a1a1a',
                 borderWidth: 1
