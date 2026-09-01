@@ -1333,7 +1333,7 @@
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
               label: 'Número de Casos',
-              data: [392, 425, 299, 227, 220, 217, 128, 78],
+              data: [392, 425, 299, 236, 228, 217, 129, 79],
               backgroundColor: ['#DC2626', '#EF4444', '#F87171', '#FCA5A5', '#FECACA', '#FEE2E2', '#FEF2F2', '#FFE4E4'],
               borderColor: '#991B1B',
               borderWidth: 2,
@@ -1363,7 +1363,7 @@
             labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Registros por Ano',
-              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 64, 110],
+              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 63, 133],
               borderColor: '#DC2626',
               backgroundColor: 'rgba(220, 38, 38, 0.1)',
               borderWidth: 3,
@@ -1391,13 +1391,13 @@
 
       if(document.getElementById('accidentTypePieChart')){
         const ctxPie = document.getElementById('accidentTypePieChart').getContext('2d');
-        const totalAccidents = 1986;
+        const totalAccidents = 2005;
         new Chart(ctxPie, {
           type: 'doughnut',
           data: {
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
-              data: [392, 425, 299, 227, 220, 217, 128, 78],
+              data: [392, 425, 299, 236, 228, 217, 129, 79],
               backgroundColor: ['#FF6B6B', '#FF8C42', '#FFD93D', '#FF6B9D', '#C44569', '#F38181', '#AA96DA', '#FCBAD3'],
               borderColor: '#1a1a1a',
               borderWidth: 2
@@ -1431,7 +1431,7 @@
             labels: ['Lavoura', 'Rodovia', 'Propriedade Rural', 'Outros'],
             datasets: [{
               label: 'Número de Acidentes',
-              data: [1705, 1388, 0, 0],
+              data: [1726, 1390, 0, 0],
               backgroundColor: ['#FF6B6B', '#4CAF50', '#FFD93D', '#9C27B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1462,7 +1462,7 @@
             labels: ['Atropelamento', 'Colisão', 'Capotamento', 'Esmagamento', 'Queda', 'Colisão Traseira', 'Colisão Lateral', 'Colisão Transversal'],
             datasets: [{
               label: 'Taxa de Letalidade (%)',
-              data: [95.45, 92.6, 82.38, 82.03, 91.03, 1.65, 0.00, 0.46],
+              data: [95.61, 92.6, 83.05, 82.17, 89.87, 1.65, 0, 0.46],
               backgroundColor: ['#C8102E', '#E74C3C', '#E67E22', '#F39C12', '#F1C40F', '#F4D03F', '#52BE80', '#48C9B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1494,14 +1494,14 @@
             datasets: [
               {
                 label: 'Rodovia (PRF)',
-                data: [1388, 36, 2.59],
+                data: [1390, 37, 2.66],
                 backgroundColor: '#4CAF50',
                 borderColor: '#1a1a1a',
                 borderWidth: 1
               },
               {
                 label: 'Lavoura (LIMA)',
-                data: [1705, 1537, 90.15],
+                data: [1726, 1556, 90.15],
                 backgroundColor: '#C8102E',
                 borderColor: '#1a1a1a',
                 borderWidth: 1
