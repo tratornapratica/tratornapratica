@@ -190,6 +190,35 @@
     }
     .menu-toggle span::before{top:-7px}
     .menu-toggle span::after{top:7px}
+
+    /* ===== MODAL CHECKLIST (captura de lead) ===== */
+    .tp-modal-overlay{
+      display:none;position:fixed;inset:0;z-index:200;
+      background:rgba(7,10,8,.86);backdrop-filter:blur(4px);
+      align-items:center;justify-content:center;padding:20px;
+    }
+    .tp-modal-overlay.open{display:flex}
+    .tp-modal{
+      position:relative;width:100%;max-width:420px;
+      background:#11150F;border:1px solid var(--border);border-radius:14px;
+      padding:32px 28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.55);
+    }
+    .tp-modal-close{
+      position:absolute;top:14px;right:14px;width:32px;height:32px;
+      display:flex;align-items:center;justify-content:center;
+      border-radius:8px;color:#9DA59E;transition:color .2s ease, background .2s ease
+    }
+    .tp-modal-close:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .tp-modal-icon{
+      width:48px;height:48px;border-radius:10px;background:var(--gold-soft);
+      display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:16px
+    }
+    .tp-modal h3{
+      font-family:var(--display);text-transform:uppercase;color:#fff;
+      font-size:1.35rem;margin-bottom:8px;letter-spacing:.01em
+    }
+    .tp-modal>p{color:#A8B0AB;font-size:.88rem;margin-bottom:20px;line-height:1.5}
+    .tp-modal .lead-note{color:#7D857F;font-size:.72rem;line-height:1.5;margin-top:4px}
   </style>
 
   <style>
@@ -971,7 +1000,7 @@
       <div style="margin-top: 40px; text-align: center; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px dashed var(--border);">
         <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 12px;">Previna-se contra o risco</h4>
         <p style="color: #A8B0AB; font-size: 0.9rem; margin-bottom: 20px;">Baixe nosso checklist técnico de segurança baseado nos dados de acidentes do LIMA/UFC.</p>
-        <a href="/checklist-seguranca.pdf" class="btn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px;">
+        <a href="/checklist-seguranca.pdf" class="btn" target="_blank" rel="noopener" onclick="return tpAbrirModalChecklist(event, this.href)" style="display: inline-flex; align-items: center; gap: 10px;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
           Baixar Checklist de Segurança
         </a>
@@ -1120,7 +1149,7 @@
               <p>Perfil profissional</p>
             </div>
           </a>
-          <a href="/checklist-seguranca.pdf" class="canal-item canal-ck" target="_blank" rel="noopener">
+          <a href="/checklist-seguranca.pdf" class="canal-item canal-ck" target="_blank" rel="noopener" onclick="return tpAbrirModalChecklist(event, this.href)">
             <div class="canal-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
             </div>
@@ -1589,6 +1618,90 @@
         });
       }
     });
+  </script>
+
+  <!-- ============================== MODAL CHECKLIST (captura de lead) ============================== -->
+  <div class="tp-modal-overlay" id="tpModalChecklist" aria-hidden="true">
+    <div class="tp-modal" role="dialog" aria-modal="true" aria-labelledby="tpModalChecklistTitle">
+      <button type="button" class="tp-modal-close" onclick="tpFecharModalChecklist()" aria-label="Fechar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="tp-modal-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      </div>
+      <h3 id="tpModalChecklistTitle">Baixe o Checklist de Segurança</h3>
+      <p>Material técnico gratuito, baseado nos dados do Banco LIMA/UFC. Informe seu nome e e-mail para receber o link e conteúdos de segurança direto no seu WhatsApp.</p>
+      <form class="lead-form" onsubmit="return tpEnviarLeadChecklist(event)" novalidate>
+        <div class="lead-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          <input type="text" id="tpChecklistNome" name="nome" placeholder="Seu nome" autocomplete="name" required />
+        </div>
+        <div class="lead-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <input type="email" id="tpChecklistEmail" name="email" placeholder="Seu melhor e-mail" autocomplete="email" required />
+        </div>
+        <button type="submit">Quero o Checklist</button>
+        <p class="lead-note">Seus dados são usados só para te enviar o checklist e conteúdos de segurança do LIMA/UFC. Sem spam.</p>
+      </form>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var overlay = document.getElementById('tpModalChecklist');
+      var pendingHref = '/checklist-seguranca.pdf';
+
+      window.tpAbrirModalChecklist = function(e, href){
+        if(e) e.preventDefault();
+        pendingHref = href || '/checklist-seguranca.pdf';
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        var nomeEl = document.getElementById('tpChecklistNome');
+        if(nomeEl) setTimeout(function(){ nomeEl.focus(); }, 50);
+        return false;
+      };
+
+      window.tpFecharModalChecklist = function(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      };
+
+      overlay.addEventListener('click', function(e){
+        if(e.target === overlay) tpFecharModalChecklist();
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && overlay.classList.contains('open')) tpFecharModalChecklist();
+      });
+
+      window.tpEnviarLeadChecklist = function(e){
+        e.preventDefault();
+        var nome  = (document.getElementById('tpChecklistNome').value || '').trim();
+        var email = (document.getElementById('tpChecklistEmail').value || '').trim();
+        if(!nome || !email){
+          alert('Por favor, preencha nome e e-mail.');
+          return false;
+        }
+
+        if(typeof gtag === 'function'){
+          gtag('event', 'generate_lead', {
+            content_type: 'checklist_seguranca',
+            method: 'whatsapp'
+          });
+        }
+
+        window.open(pendingHref, '_blank', 'noopener');
+
+        var msg = 'Ola! Baixei o Checklist de Seguranca do Trator na Pratica.%0A'
+                + '%0A*Nome:* ' + encodeURIComponent(nome)
+                + '%0A*E-mail:* ' + encodeURIComponent(email);
+        window.open('https://wa.me/5585999550114?text=' + msg, '_blank', 'noopener');
+
+        tpFecharModalChecklist();
+        e.target.reset();
+        return false;
+      };
+    })();
   </script>
 
 </body>
