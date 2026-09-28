@@ -1690,7 +1690,17 @@
           });
         }
 
-        window.open(pendingHref, '_blank', 'noopener');
+        // Dois window.open() no mesmo clique fazem o navegador bloquear o segundo
+        // como pop-up. Por isso o PDF é aberto via clique programático em um <a>
+        // (tratado como download/navegação, não como pop-up) e só o WhatsApp
+        // usa window.open, que é o pop-up que realmente importa manter.
+        var pdfLink = document.createElement('a');
+        pdfLink.href = pendingHref;
+        pdfLink.target = '_blank';
+        pdfLink.rel = 'noopener';
+        document.body.appendChild(pdfLink);
+        pdfLink.click();
+        document.body.removeChild(pdfLink);
 
         var msg = 'Ola! Baixei o Checklist de Seguranca do Trator na Pratica.%0A'
                 + '%0A*Nome:* ' + encodeURIComponent(nome)
