@@ -14,9 +14,17 @@
   <meta property="og:url" content="https://tratornapratica.com.br/para-marcas.html" />
   <meta property="og:title" content="Para Marcas | Trator na Prática" />
   <meta property="og:description" content="Media kit e parcerias com o Prof. Leonardo Monteiro. Fale direto com quem opera e decide compra no campo." />
-  <meta property="og:image" content="https://tratornapratica.com.br/og-image.png" />
+  <meta property="og:image" content="https://tratornapratica.com.br/og-image-marcas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Trator na Prática — Media Kit e Parcerias com Prof. Leonardo Monteiro" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Trator na Prática" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Para Marcas | Trator na Prática" />
+  <meta name="twitter:description" content="Media kit e parcerias com o Prof. Leonardo Monteiro." />
+  <meta name="twitter:image" content="https://tratornapratica.com.br/og-image-marcas.png" />
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -223,6 +231,42 @@
       .pkg-grid{grid-template-columns:1fr}
       section{padding:64px 0}
     }
+
+    /* LEAD FORM */
+    .form-section{background:var(--bg-1)}
+    .form-wrap{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;
+    }
+    .form-card{
+      background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
+      padding:36px;box-shadow:var(--shadow-lg);
+    }
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .form-field{margin-bottom:14px}
+    .form-field label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+    .form-field input, .form-field select, .form-field textarea{
+      width:100%;background:var(--bg-1);border:1px solid var(--border);border-radius:8px;
+      color:var(--text);padding:12px 14px;font-family:'Inter',sans-serif;font-size:.92rem;outline:none;
+      transition:border-color .2s ease;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus{border-color:var(--gold)}
+    .form-field textarea{resize:vertical;min-height:90px}
+    .form-submit{
+      width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#161200;
+      font-weight:700;font-size:.95rem;padding:15px;border-radius:100px;margin-top:6px;
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .form-submit:hover{transform:translateY(-2px)}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .form-msg{font-size:.85rem;margin-top:14px;padding:12px 14px;border-radius:8px}
+    .form-msg.error{background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.35);color:#ff8c8c}
+    .form-msg.success{background:rgba(46,125,50,.15);border:1px solid rgba(46,125,50,.5);color:#8fdb96}
+    .form-success{text-align:center;padding:40px 10px}
+    .form-success .check{font-family:var(--display);font-size:2.4rem;color:var(--gold);margin-bottom:10px}
+    @media (max-width: 980px){
+      .form-wrap{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -394,6 +438,62 @@
     </div>
   </section>
 
+  <!-- LEAD FORM -->
+  <section class="form-section" id="proposta">
+    <div class="container form-wrap">
+      <div>
+        <span class="eyebrow">Proposta de Parceria</span>
+        <h2>Conte sobre sua marca</h2>
+        <p class="lead">Preencha os dados abaixo e a equipe do Trator na Prática retorna com uma proposta de formato e valores dentro de 48h úteis.</p>
+      </div>
+      <div class="form-card">
+        <div id="formaMarcaWrap">
+          <form id="formaMarca" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fm-nome">Nome *</label>
+                <input type="text" id="fm-nome" name="nome" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="fm-empresa">Empresa / Marca *</label>
+                <input type="text" id="fm-empresa" name="empresa" required autocomplete="organization" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fm-email">E-mail *</label>
+                <input type="email" id="fm-email" name="email" required autocomplete="email" />
+              </div>
+              <div class="form-field">
+                <label for="fm-whatsapp">WhatsApp</label>
+                <input type="tel" id="fm-whatsapp" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="fm-formato">Formato de interesse</label>
+              <select id="fm-formato" name="formato">
+                <option value="" disabled selected>Selecione...</option>
+                <option>Reel "Testado no Campo"</option>
+                <option>Post fixo + Stories</option>
+                <option>Carrossel educativo</option>
+                <option>Live / Webinar técnico</option>
+                <option>Validação científica LIMA/UFC</option>
+                <option>Aparição em curso / app SeleMaq</option>
+                <option>Ainda não sei / quero sugestões</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="fm-mensagem">Mensagem / Orçamento estimado *</label>
+              <textarea id="fm-mensagem" name="mensagem" required placeholder="Conte um pouco sobre o produto/serviço e o objetivo da parceria."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="fm-submit">Enviar proposta</button>
+            <div id="fm-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container">
@@ -418,6 +518,65 @@
   <a href="https://wa.me/5585999550114" class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.821 11.821 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
   </a>
+
+<script>
+    (function(){
+      var form = document.getElementById('formaMarca');
+      var submitBtn = document.getElementById('fm-submit');
+      var msgBox = document.getElementById('fm-msg');
+      var wrap = document.getElementById('formaMarcaWrap');
+      if(!form) return;
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var nome = document.getElementById('fm-nome').value.trim();
+        var empresa = document.getElementById('fm-empresa').value.trim();
+        var email = document.getElementById('fm-email').value.trim();
+        var whatsapp = document.getElementById('fm-whatsapp').value.trim();
+        var formato = document.getElementById('fm-formato').value;
+        var mensagem = document.getElementById('fm-mensagem').value.trim();
+
+        if(!nome || !empresa || !email || !mensagem){
+          msgBox.innerHTML = '<div class="form-msg error">Preencha os campos obrigatórios (*).</div>';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        msgBox.innerHTML = '';
+
+        fetch('https://formspree.io/f/xojpgybk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: nome,
+            email: email,
+            tipo: 'Proposta de parceria — Para Marcas',
+            _subject: 'Novo Lead de Marca — ' + empresa,
+            empresa: empresa,
+            whatsapp: whatsapp || 'não informado',
+            formato: formato || 'não selecionado',
+            message: mensagem
+          })
+        }).then(function(res){
+          if(res.ok){
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', { event_category: 'para_marcas', event_label: 'form_proposta_marca' });
+            }
+            wrap.innerHTML = '<div class="form-success"><div class="check">✓</div><h3>Proposta recebida!</h3><p>Obrigado, ' + nome.split(" ")[0] + '. Nossa equipe retorna em até 48h úteis. Se preferir, fale agora pelo <a href="https://wa.me/5585999550114" target="_blank" rel="noopener" style="color:var(--gold)">WhatsApp</a>.</p></div>';
+          } else {
+            return res.json().then(function(data){
+              throw new Error((data && data.errors && data.errors[0] && data.errors[0].message) || 'Erro ao enviar. Tente novamente.');
+            });
+          }
+        }).catch(function(err){
+          msgBox.innerHTML = '<div class="form-msg error">⚠️ ' + (err.message || 'Falha de conexão. Tente novamente.') + '</div>';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar proposta';
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
