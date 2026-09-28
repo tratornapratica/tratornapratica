@@ -219,6 +219,8 @@
     }
     .tp-modal>p{color:#A8B0AB;font-size:.88rem;margin-bottom:20px;line-height:1.5}
     .tp-modal .lead-note{color:#7D857F;font-size:.72rem;line-height:1.5;margin-top:4px}
+    .tp-modal-success p{color:#A8B0AB;font-size:.88rem;margin-bottom:18px;line-height:1.5}
+    .tp-modal-success .btn{width:100%}
   </style>
 
   <style>
@@ -1643,6 +1645,10 @@
         <button type="submit">Quero o Checklist</button>
         <p class="lead-note">Seus dados são usados só para te enviar o checklist e conteúdos de segurança do LIMA/UFC. Sem spam.</p>
       </form>
+      <div class="tp-modal-success" id="tpChecklistSucesso" style="display:none">
+        <p>Prontinho! Abrimos o WhatsApp para você. Agora baixe o checklist:</p>
+        <a id="tpChecklistDownloadLink" href="/checklist-seguranca.pdf" target="_blank" rel="noopener" class="btn">Baixar Checklist de Segurança</a>
+      </div>
     </div>
   </div>
   <script>
@@ -1653,6 +1659,8 @@
       window.tpAbrirModalChecklist = function(e, href){
         if(e) e.preventDefault();
         pendingHref = href || '/checklist-seguranca.pdf';
+        document.querySelector('#tpModalChecklist .lead-form').style.display = '';
+        document.getElementById('tpChecklistSucesso').style.display = 'none';
         overlay.classList.add('open');
         overlay.setAttribute('aria-hidden','false');
         document.body.style.overflow = 'hidden';
@@ -1690,24 +1698,18 @@
           });
         }
 
-        // Dois window.open() no mesmo clique fazem o navegador bloquear o segundo
-        // como pop-up. Por isso o PDF é aberto via clique programático em um <a>
-        // (tratado como download/navegação, não como pop-up) e só o WhatsApp
-        // usa window.open, que é o pop-up que realmente importa manter.
-        var pdfLink = document.createElement('a');
-        pdfLink.href = pendingHref;
-        pdfLink.target = '_blank';
-        pdfLink.rel = 'noopener';
-        document.body.appendChild(pdfLink);
-        pdfLink.click();
-        document.body.removeChild(pdfLink);
-
+        // O navegador só libera UM window.open() por clique - um segundo é
+        // bloqueado como pop-up. Por isso só o WhatsApp abre automaticamente
+        // (igual ao formulário de contato do site) e o PDF vira um botão de
+        // download que o usuário clica em seguida, o que sempre funciona.
         var msg = 'Ola! Baixei o Checklist de Seguranca do Trator na Pratica.%0A'
                 + '%0A*Nome:* ' + encodeURIComponent(nome)
                 + '%0A*E-mail:* ' + encodeURIComponent(email);
         window.open('https://wa.me/5585999550114?text=' + msg, '_blank', 'noopener');
 
-        tpFecharModalChecklist();
+        document.getElementById('tpChecklistDownloadLink').href = pendingHref;
+        document.querySelector('#tpModalChecklist .lead-form').style.display = 'none';
+        document.getElementById('tpChecklistSucesso').style.display = 'block';
         e.target.reset();
         return false;
       };
