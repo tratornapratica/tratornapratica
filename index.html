@@ -638,6 +638,7 @@
         <a href="#inicio" class="active">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#cursos">Cursos</a>
+        <a href="#livros">Livros</a>
         <a href="#info">Conteúdo</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#cta">Contato</a>
@@ -1011,6 +1012,63 @@
     </div>
   </section>
 
+  <!-- ============================== LIVROS (captura de lead) ============================== -->
+  <section class="section" id="livros" style="background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Livros do <span class="gold">Prof. Leonardo Monteiro</span></h2>
+        <p style="color: #A8B0AB; max-width: 640px; margin: 0 auto;">Três obras de autoria do professor sobre operação segura com tratores e máquinas agrícolas, fruto de mais de 20 anos de pesquisa no LIMA/UFC. Baixe os 3 livros em PDF, gratuitamente.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+
+        <div style="text-align: center;">
+          <img src="/assets/images/livros/livro1.jpg" alt="Capa do livro Operação com Tratores Agrícolas" loading="lazy" style="width: 100%; max-width: 220px; border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,.45); border: 1px solid var(--border);" />
+          <h4 style="color: #fff; font-size: 0.95rem; margin: 14px 0 4px;">Operação com Tratores Agrícolas</h4>
+          <p style="color: var(--text-mute); font-size: 0.8rem; margin: 0;">L. A. Monteiro &amp; P. R. Arbex Silva · 2009</p>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="/assets/images/livros/livro2.jpg" alt="Capa do livro Prevenção de Acidentes com Tratores Agrícolas e Florestais" loading="lazy" style="width: 100%; max-width: 220px; border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,.45); border: 1px solid var(--border);" />
+          <h4 style="color: #fff; font-size: 0.95rem; margin: 14px 0 4px;">Prevenção de Acidentes com Tratores Agrícolas e Florestais</h4>
+          <p style="color: var(--text-mute); font-size: 0.8rem; margin: 0;">Organizado por Leonardo A. Monteiro</p>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="/assets/images/livros/livro3.jpg" alt="Capa do livro Segurança na Operação com Máquinas Agrícolas" loading="lazy" style="width: 100%; max-width: 220px; border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,.45); border: 1px solid var(--border);" />
+          <h4 style="color: #fff; font-size: 0.95rem; margin: 14px 0 4px;">Segurança na Operação com Máquinas Agrícolas</h4>
+          <p style="color: var(--text-mute); font-size: 0.8rem; margin: 0;">L. A. Monteiro &amp; D. Albiero · 2013</p>
+        </div>
+
+      </div>
+
+      <div style="max-width: 480px; margin: 0 auto; text-align: center; padding: 32px 24px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 12px;">
+        <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 10px;">Baixe os 3 livros gratuitamente</h4>
+        <p style="color: #A8B0AB; font-size: 0.9rem; margin-bottom: 20px;">Informe seu nome e e-mail para receber os links de download dos 3 livros.</p>
+        <form class="lead-form" onsubmit="return tpEnviarLeadLivros(event)" novalidate>
+          <div class="lead-input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            <input type="text" id="tpLivrosNome" name="nome" placeholder="Seu nome" autocomplete="name" required />
+          </div>
+          <div class="lead-input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <input type="email" id="tpLivrosEmail" name="email" placeholder="Seu melhor e-mail" autocomplete="email" required />
+          </div>
+          <button type="submit">Quero os 3 Livros</button>
+          <p class="lead-note">Seus dados são usados só para te enviar os livros e conteúdos de segurança do LIMA/UFC. Sem spam.</p>
+        </form>
+        <div class="tp-modal-success" id="tpLivrosSucesso" style="display:none">
+          <p style="color: #fff; margin-bottom: 16px;">Prontinho! Abrimos o WhatsApp para você. Agora baixe seus livros:</p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="/livros/operacao-com-tratores-agricolas.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 0.8rem; padding: 12px 20px;">Baixar: Operação com Tratores Agrícolas</a>
+            <a href="/livros/prevencao-de-acidentes-tratores.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 0.8rem; padding: 12px 20px;">Baixar: Prevenção de Acidentes</a>
+            <a href="/livros/seguranca-na-operacao-maquinas-agricolas.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 0.8rem; padding: 12px 20px;">Baixar: Segurança na Operação com Máquinas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================== CURSOS ============================== -->
   <section class="section" id="cursos">
     <div class="container">
@@ -1292,6 +1350,7 @@
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#livros">Livros</a></li>
             <li><a href="#info">Conteúdo</a></li>
             <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#cta">Contato</a></li>
@@ -1732,6 +1791,48 @@
         return false;
       };
     })();
+  </script>
+
+  <script>
+    window.tpEnviarLeadLivros = function(e){
+      e.preventDefault();
+      var nome  = (document.getElementById('tpLivrosNome').value || '').trim();
+      var email = (document.getElementById('tpLivrosEmail').value || '').trim();
+      if(!nome || !email){
+        alert('Por favor, preencha nome e e-mail.');
+        return false;
+      }
+
+      if(typeof gtag === 'function'){
+        gtag('event', 'generate_lead', {
+          content_type: 'livros_lima',
+          method: 'whatsapp'
+        });
+      }
+
+      try{
+        fetch('https://script.google.com/macros/s/AKfycbxoG0bPiX6adKGLnsTCq-WPQ6AtVxpPfFC3fVXL5dhsxWu236Unqs5sRtSRsFN7j_mssQ/exec', {
+          method: 'POST',
+          body: JSON.stringify({
+            secret: 'tnp-2026-lima',
+            nome: nome,
+            email: email,
+            origem: 'livros_lima'
+          }),
+          keepalive: true
+        }).catch(function(){});
+      }catch(err){}
+
+      var msg = 'Ola! Quero baixar os livros do Trator na Pratica.%0A'
+              + '%0A*Nome:* ' + encodeURIComponent(nome)
+              + '%0A*E-mail:* ' + encodeURIComponent(email);
+      window.open('https://wa.me/5585999550114?text=' + msg, '_blank', 'noopener');
+
+      document.querySelector('#livros .lead-form').style.display = 'none';
+      document.getElementById('tpLivrosSucesso').style.display = 'block';
+      e.target.reset();
+      return false;
+    };
   </script>
 
 </body>
