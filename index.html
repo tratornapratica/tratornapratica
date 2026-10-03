@@ -756,7 +756,7 @@
     <div class="container">
       <div class="section-head" style="text-align: center; margin-bottom: 40px;">
         <h2 class="section-title">Estatísticas de <span class="gold">Acidentes</span></h2>
-        <p style="color: #A8B0AB; max-width: 700px; margin: 10px auto 0;">Dados reais sistematizados pelo Banco LIMA/UFC sobre acidentes com máquinas agrícolas no Brasil. Fusão Epidemiológica PRF + LIMA · 3.126 registros · 27 UFs · 2010–2026.</p>
+        <p style="color: #A8B0AB; max-width: 700px; margin: 10px auto 0;">Dados reais sistematizados pelo Banco LIMA/UFC sobre acidentes com máquinas agrícolas no Brasil. Fusão Epidemiológica PRF + LIMA · 3.130 registros · 27 UFs · 2007–2026 · Atualizado em 02/10/2026.</p>
       </div>
       
       <div class="authority-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
@@ -765,7 +765,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
           <div>
-            <span class="num">3.126</span>
+            <span class="num">3.130</span>
             <span class="lbl">Registros Totais (Fusão PRF+LIMA)</span>
           </div>
         </div>
@@ -775,7 +775,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
           <div>
-            <span class="num" style="color: #FF4444;">1.602</span>
+            <span class="num" style="color: #FF4444;">1.604</span>
             <span class="lbl">Mortes Confirmadas</span>
           </div>
         </div>
@@ -835,6 +835,51 @@
       <div style="margin-top: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
         <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 20px; text-align: center; font-size: 1.1rem;">Rodovia vs Lavoura: Comparação de Letalidade</h4>
         <canvas id="chartRodoviaVsLavoura" style="max-height: 400px;"></canvas>
+      </div>
+
+      <!-- Destaques da Fusão PRF + LIMA (atualizado 02/10/2026) -->
+      <div style="margin-top: 60px;">
+        <h3 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 12px; text-align: center; font-size: 1.3rem;">O que os dados <span class="gold">revelam</span></h3>
+        <p style="color: #A8B0AB; text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 0.95rem;">No campo, o operador morre antes do socorro chegar. Na rodovia, o sistema de saúde funciona. A diferença é a face oculta de uma epidemia que escapa dos registros oficiais.</p>
+        <div class="authority-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+          <div class="authority-item" style="border-color: rgba(255,68,68,0.4);">
+            <div>
+              <span class="num" style="color: #FF4444;">34x</span>
+              <span class="lbl">mais letal no campo (90,1%) do que na rodovia (2,7%)</span>
+            </div>
+          </div>
+          <div class="authority-item">
+            <div>
+              <span class="num" style="color: #FF4444;">95,7%</span>
+              <span class="lbl">de letalidade em atropelamentos por trator (230 casos)</span>
+            </div>
+          </div>
+          <div class="authority-item">
+            <div>
+              <span class="num" style="color: #FF4444;">82,4%</span>
+              <span class="lbl">de letalidade em capotamentos (239 casos)</span>
+            </div>
+          </div>
+          <div class="authority-item">
+            <div>
+              <span class="num">NR-31</span>
+              <span class="lbl">a norma mais infringida: 668 casos, 595 mortes</span>
+            </div>
+          </div>
+          <div class="authority-item">
+            <div>
+              <span class="num">MG</span>
+              <span class="lbl">estado com mais casos (256); PR tem a maior letalidade (36,5%)</span>
+            </div>
+          </div>
+          <div class="authority-item">
+            <div>
+              <span class="num">BR-285</span>
+              <span class="lbl">rodovia mais letal (27%), no corredor da soja gaúcha</span>
+            </div>
+          </div>
+        </div>
+        <p style="color: #6f7873; text-align: center; max-width: 760px; margin: 28px auto 0; font-size: 0.8rem; line-height: 1.6;">Fonte: Banco Brasil Tratores (fusão PRF Datatran 2007–2012 + Banco LIMA/UFC 2012–2026), versão de 02/10/2026. Parte dos registros não traz tipo de acidente, causa ou ano informado; os gráficos consideram apenas os campos preenchidos.</p>
       </div>
 
       <!-- Casos Reais -->
@@ -1574,7 +1619,7 @@
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
               label: 'Número de Casos',
-              data: [393, 425, 299, 238, 229, 217, 130, 79],
+              data: [393, 425, 299, 239, 230, 217, 131, 79],
               backgroundColor: ['#DC2626', '#EF4444', '#F87171', '#FCA5A5', '#FECACA', '#FEE2E2', '#FEF2F2', '#FFE4E4'],
               borderColor: '#991B1B',
               borderWidth: 2,
@@ -1604,7 +1649,7 @@
             labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Registros por Ano',
-              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 65, 141],
+              data: [251, 186, 89, 649, 224, 172, 174, 123, 2, 13, 3, 7, 10, 40, 28, 65, 145],
               borderColor: '#DC2626',
               backgroundColor: 'rgba(220, 38, 38, 0.1)',
               borderWidth: 3,
@@ -1632,13 +1677,13 @@
 
       if(document.getElementById('accidentTypePieChart')){
         const ctxPie = document.getElementById('accidentTypePieChart').getContext('2d');
-        const totalAccidents = 2010;
+        const totalAccidents = 2013;
         new Chart(ctxPie, {
           type: 'doughnut',
           data: {
             labels: ['Colisão', 'Colisão Traseira', 'Colisão Lateral', 'Capotamento', 'Atropelamento', 'Colisão Transversal', 'Esmagamento', 'Queda de Máquina'],
             datasets: [{
-              data: [393, 425, 299, 238, 229, 217, 130, 79],
+              data: [393, 425, 299, 239, 230, 217, 131, 79],
               backgroundColor: ['#FF6B6B', '#FF8C42', '#FFD93D', '#FF6B9D', '#C44569', '#F38181', '#AA96DA', '#FCBAD3'],
               borderColor: '#1a1a1a',
               borderWidth: 2
@@ -1672,7 +1717,7 @@
             labels: ['Lavoura', 'Rodovia', 'Propriedade Rural', 'Outros'],
             datasets: [{
               label: 'Número de Acidentes',
-              data: [1736, 1390, 0, 0],
+              data: [1740, 1390, 0, 0],
               backgroundColor: ['#FF6B6B', '#4CAF50', '#FFD93D', '#9C27B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1703,7 +1748,7 @@
             labels: ['Atropelamento', 'Colisão', 'Capotamento', 'Esmagamento', 'Queda', 'Colisão Traseira', 'Colisão Lateral', 'Colisão Transversal'],
             datasets: [{
               label: 'Taxa de Letalidade (%)',
-              data: [95.63, 92.62, 82.77, 82.31, 89.87, 1.65, 0, 0.46],
+              data: [95.65, 92.62, 82.43, 82.44, 89.87, 1.65, 0, 0.46],
               backgroundColor: ['#C8102E', '#E74C3C', '#E67E22', '#F39C12', '#F1C40F', '#F4D03F', '#52BE80', '#48C9B0'],
               borderColor: '#1a1a1a',
               borderWidth: 1
@@ -1742,7 +1787,7 @@
               },
               {
                 label: 'Lavoura (LIMA)',
-                data: [1736, 1565, 90.15],
+                data: [1740, 1567, 90.06],
                 backgroundColor: '#C8102E',
                 borderColor: '#1a1a1a',
                 borderWidth: 1
