@@ -19,10 +19,10 @@
   <meta property="og:url" content="https://tratornapratica.com.br/" />
   <meta property="og:title" content="Trator na Prática | Prof. Leonardo Monteiro" />
   <meta property="og:description" content="Mecanização agrícola com segurança e eficiência. Aprenda com quem vive a prática no campo." />
-  <meta property="og:image" content="https://tratornapratica.com.br/og-image.png" />
-  <meta property="og:image:width" content="1376" />
-  <meta property="og:image:height" content="768" />
-  <meta property="og:image:alt" content="Prof. Leonardo Monteiro – Trator na Prática" />
+  <meta property="og:image" content="https://tratornapratica.com.br/og-image-v2.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Trator na Prática — Mecanização agrícola com segurança e eficiência — Prof. Leonardo Monteiro" />
   <meta property="og:updated_time" content="2026-04-26T12:00:00-03:00" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Trator na Prática" />
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Trator na Prática | Prof. Leonardo Monteiro" />
   <meta name="twitter:description" content="Mecanização agrícola com segurança e eficiência." />
-  <meta name="twitter:image" content="https://tratornapratica.com.br/og-image.png" />
+  <meta name="twitter:image" content="https://tratornapratica.com.br/og-image-v2.png" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -496,7 +496,7 @@
     }
     #cta::before{
       content:'';position:absolute;inset:0;
-      background:url('/assets/images/logo-flat.png') no-repeat right center / contain;
+      /* REVISAO 2026-10: removida marca d'água logo-flat.png (TractorCare) */
       opacity:.06;
       transform:translateX(20%)
     }
@@ -613,6 +613,10 @@
       .cta-inner .cta-buttons{justify-content:center}
       .info-sobre{grid-template-columns:1fr;text-align:center}
       .info-sobre .sobre-photo{margin:0 auto}
+      /* REVISAO 2026-10: evita rolagem horizontal no celular */
+      .authority-grid{grid-template-columns:1fr !important}
+      .authority-item{min-width:0}
+      .authority-item .num{overflow-wrap:anywhere}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -627,7 +631,7 @@
   <header class="header" role="banner">
     <div class="container header-inner">
       <a href="#inicio" class="logo" aria-label="Trator na Pratica - Inicio">
-        <img src="/assets/images/logo-flat.png" alt="Logo Trator na Prática" />
+        <!-- REVISAO 2026-10: removido logo-flat.png (marca TractorCare) do cabeçalho; aguardando logo oficial Trator na Prática -->
         <span class="logo-text">
           <span>Trator na Prática</span>
           <small>Prof. Leonardo Monteiro</small>
@@ -641,7 +645,6 @@
         <a href="#livros">Livros</a>
         <a href="#pesquisas">Pesquisas</a>
         <a href="#info">Conteúdo</a>
-        <a href="#depoimentos">Depoimentos</a>
         <a href="#cta">Contato</a>
         <a href="/para-marcas.html">Para Marcas</a>
       </nav>
@@ -733,8 +736,8 @@
           </svg>
         </div>
         <div>
-          <span class="num">+10 MIL</span>
-          <span class="lbl">alunos capacitados</span>
+          <span class="num">Ensino</span>
+          <span class="lbl">e capacitação em mecanização agrícola</span>
         </div>
       </div>
       <div class="authority-item">
@@ -802,7 +805,7 @@
       </div>
 
       <!-- Gráficos Interativos -->
-      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px;">
+      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr)); gap: 40px;">
         <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
           <canvas id="chartTiposAcidente" style="max-height: 400px;"></canvas>
         </div>
@@ -818,7 +821,7 @@
       </div>
 
       <!-- Novos Gráficos Comparativos -->
-      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px;">
+      <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr)); gap: 40px;">
         <!-- Gráfico de Localização -->
         <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(245,184,0,0.2); border-radius: 12px; padding: 24px;">
           <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 20px; text-align: center; font-size: 1rem;">Onde os Tratores se Acidentam</h4>
@@ -840,12 +843,13 @@
       <!-- Destaques da Fusão PRF + LIMA (atualizado 03/10/2026) -->
       <div style="margin-top: 60px;">
         <h3 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 12px; text-align: center; font-size: 1.3rem;">O que os dados <span class="gold">revelam</span></h3>
-        <p style="color: #A8B0AB; text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 0.95rem;">No campo, o operador morre antes do socorro chegar. Na rodovia, o sistema de saúde funciona. A diferença é a face oculta de uma epidemia que escapa dos registros oficiais.</p>
+        <p style="color: #A8B0AB; text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 0.95rem;">As bases reúnem ocorrências de fontes e contextos diferentes. As diferenças de desfecho exigem considerar critérios de registro, gravidade e dados ausentes. A comparação entre esses registros, isoladamente, não demonstra a causa nem representa o risco de todos os acidentes no país.</p>
         <div class="authority-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
           <div class="authority-item" style="border-color: rgba(255,68,68,0.4);">
             <div>
-              <span class="num" style="color: #FF4444;">33x</span>
-              <span class="lbl">mais letal no campo (88,7%) do que na rodovia (2,7%)</span>
+              <!-- REVISAO 2026-10: destaque anterior retirado até validação de populações e denominadores -->
+              <span class="num">Dados com contexto e limites</span>
+              <span class="lbl">a comparação campo × rodovia depende de populações e denominadores validados</span>
             </div>
           </div>
           <div class="authority-item">
@@ -1050,7 +1054,7 @@
       <div style="margin-top: 40px; text-align: center; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px dashed var(--border);">
         <h4 style="color: #fff; font-family: var(--display); text-transform: uppercase; margin-bottom: 12px;">Previna-se contra o risco</h4>
         <p style="color: #A8B0AB; font-size: 0.9rem; margin-bottom: 20px;">Baixe nosso checklist técnico de segurança baseado nos dados de acidentes do LIMA/UFC.</p>
-        <a href="/checklist-seguranca.pdf" class="btn" target="_blank" rel="noopener" onclick="return tpAbrirModalChecklist(event, this.href)" style="display: inline-flex; align-items: center; gap: 10px;">
+        <a href="/checklist-seguranca.pdf" class="btn" target="_blank" rel="noopener" onclick="return tpAbrirModalChecklist(event, this.href)" style="display: inline-flex; align-items: center; gap: 10px; max-width: 100%; white-space: normal; text-align: center; justify-content: center;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
           Baixar Checklist de Segurança
         </a>
@@ -1063,7 +1067,7 @@
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Livros do <span class="gold">Prof. Leonardo Monteiro</span></h2>
-        <p style="color: #A8B0AB; max-width: 640px; margin: 0 auto;">Três obras de autoria do professor sobre operação segura com tratores e máquinas agrícolas, fruto de mais de 20 anos de pesquisa no LIMA/UFC. Baixe os 3 livros em PDF, gratuitamente.</p>
+        <p style="color: #A8B0AB; max-width: 640px; margin: 0 auto;">Três obras em coautoria e organização do professor sobre operação segura com tratores e máquinas agrícolas. Baixe os 3 livros em PDF, gratuitamente.</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
@@ -1119,8 +1123,8 @@
   <section class="section" id="pesquisas">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">Publicações <span class="gold">Científicas</span> &amp; Patente</h2>
-        <p style="color: #A8B0AB; max-width: 640px; margin: 0 auto;">Pesquisas do Prof. Leonardo Monteiro publicadas em periódicos científicos brasileiros (Scielo), na área de mecanização agrícola, ensaio de tratores e prevenção de acidentes — e a patente SICCAP, desenvolvida no LIMA/UFC.</p>
+        <h2 class="section-title">Publicações <span class="gold">Científicas</span> &amp; Desenvolvimento</h2>
+        <p style="color: #A8B0AB; max-width: 640px; margin: 0 auto;">Pesquisas do Prof. Leonardo Monteiro publicadas em periódicos científicos brasileiros (Scielo), na área de mecanização agrícola, ensaio de tratores e prevenção de acidentes — e o SICCAP, linha de pesquisa e desenvolvimento do LIMA/UFC.</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
@@ -1184,12 +1188,12 @@
       </div>
 
       <div style="max-width: 1000px; margin: 36px auto 0;">
-        <a href="https://busca.inpi.gov.br/pePI/" target="_blank" rel="noopener" style="display:block; text-decoration:none; padding: 24px; background: linear-gradient(135deg, rgba(245,196,0,0.08), rgba(255,255,255,0.02)); border: 1px solid var(--gold); border-radius: 12px;">
-          <p style="color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 8px; font-weight: 700;">🏆 Patente · INPI</p>
-          <h4 style="color: #fff; font-size: 1.05rem; margin: 0 0 10px; line-height: 1.4;">SICCAP - Sistema Inteligente de Controle e Comunicação para Alerta de Perigo em Máquinas Agrícolas</h4>
-          <p style="color: var(--text-mute); font-size: 0.85rem; margin: 0 0 12px;">Registro INPI nº BR 10 2025 016036 6 · Tecnologia desenvolvida no LIMA/UFC para prevenção de acidentes com tratores e máquinas agrícolas.</p>
-          <span style="color: var(--gold); font-size: 0.85rem; font-weight: 600;">Consultar no INPI &#8594;</span>
-        </a>
+        <!-- REVISAO 2026-10: card "Patente · INPI / Registro INPI nº" substituído até documento de status do INPI -->
+        <div style="display:block; padding: 24px; background: linear-gradient(135deg, rgba(245,196,0,0.08), rgba(255,255,255,0.02)); border: 1px solid var(--gold); border-radius: 12px;">
+          <p style="color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 8px; font-weight: 700;">Pesquisa e desenvolvimento</p>
+          <h4 style="color: #fff; font-size: 1.05rem; margin: 0 0 10px; line-height: 1.4;">SICCAP — pesquisa e desenvolvimento em segurança com máquinas agrícolas</h4>
+          <p style="color: var(--text-mute); font-size: 0.85rem; margin: 0;">Linha de trabalho do LIMA/UFC voltada à prevenção de acidentes com tratores e máquinas agrícolas.</p>
+        </div>
       </div>
 
       <p style="text-align:center; color: var(--text-mute); font-size: 0.85rem; margin-top: 28px;">Currículo completo e demais publicações no <a href="http://lattes.cnpq.br/1662973235328717" target="_blank" rel="noopener" style="color: var(--gold);">Currículo Lattes</a>.</p>
@@ -1379,58 +1383,7 @@
     </div>
   </section>
 
-  <!-- ============================== DEPOIMENTOS ============================== -->
-  <section class="section" id="depoimentos">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">O que dizem nossos <span class="gold">alunos</span></h2>
-      </div>
-
-      <div class="depo-grid">
-        <article class="depo-card">
-          <span class="depo-quote" aria-hidden="true">&ldquo;</span>
-          <p class="depo-text">Os cursos do professor Leonardo mudaram minha forma de trabalhar no campo. Muito aprendizado e prática!</p>
-          <div class="depo-author">
-            <div class="depo-avatar">JR</div>
-            <div>
-              <strong>João R.</strong>
-              <span>Produtor Rural — MT</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="depo-card">
-          <span class="depo-quote" aria-hidden="true">&ldquo;</span>
-          <p class="depo-text">Conteúdo direto, objetivo e muito aplicável no dia a dia. Recomendo para todos!</p>
-          <div class="depo-author">
-            <div class="depo-avatar">CA</div>
-            <div>
-              <strong>Carlos A.</strong>
-              <span>Operador de Máquinas — GO</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="depo-card">
-          <span class="depo-quote" aria-hidden="true">&ldquo;</span>
-          <p class="depo-text">Aprendi a prevenir riscos que eu não imaginava. Curso excelente!</p>
-          <div class="depo-author">
-            <div class="depo-avatar">MT</div>
-            <div>
-              <strong>Marcos T.</strong>
-              <span>Técnico Agrícola — PR</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="depo-dots" aria-hidden="true">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </section>
+  <!-- REVISAO 2026-10: seção Depoimentos retirada até confirmação (conteúdo original no histórico git) -->
 
   <!-- ============================== CTA FINAL ============================== -->
   <section id="cta">
@@ -1462,7 +1415,7 @@
 
         <div class="footer-col footer-brand">
           <a href="#inicio" class="logo">
-            <img src="/assets/images/logo-flat.png" alt="Logo Trator na Prática - Especialista em Mecanização Agrícola" />
+            <!-- REVISAO 2026-10: removido logo-flat.png (marca TractorCare) do rodapé -->
             <span class="logo-text">
               <span>Trator na Prática</span>
               <small>Educação que gera resultados</small>
@@ -1480,7 +1433,6 @@
             <li><a href="#livros">Livros</a></li>
             <li><a href="#pesquisas">Pesquisas</a></li>
             <li><a href="#info">Conteúdo</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#cta">Contato</a></li>
             <li><a href="/para-marcas.html">Para Marcas</a></li>
           </ul>
